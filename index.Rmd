@@ -194,6 +194,4 @@ Any comments, ideas, corrections, suggestions, and proofs contributed are very w
 
 ***
 
-Go back to [main page](index.html).
-
 `r if (is_html_output()) '# References'`

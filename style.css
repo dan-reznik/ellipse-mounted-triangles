@@ -41,6 +41,14 @@ width: 100px; */
 /*object-fit: contain;*/
 }
 
+.col-md-3 {
+  width:15%;
+}
+
+.col-md-9 {
+  width:80%;
+}
+
 #TOC {
   position: fixed;
   left: 10px;
