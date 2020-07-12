@@ -49,7 +49,7 @@ df_rot <- df %>%
   mutate(math=str_glue("{{ \"X({X})\", Hold@{{{trilins},{trilins2},{trilins3}}},\"{name}\" }}"))
 df_rot$math %>% 
   str_c(collapse=",\n") %>%
-  readr::write_file("data/X101_200_math.txt")
+  readr::write_file("data/X101_200_processed.txt")
 ```
 {% endraw %}
 

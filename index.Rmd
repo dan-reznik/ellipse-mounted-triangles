@@ -13,7 +13,6 @@ output:
         toc_collapsed: true
         smooth_scroll: yes
       fig_caption: yes
-      keep_md: yes
       number_sections: yes
 link-citations: yes
 bibliography: [elliptic_billiards_v2.bib]
