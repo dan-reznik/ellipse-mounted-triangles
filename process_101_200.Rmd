@@ -1,0 +1,55 @@
+---
+title: "R Notebook"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+Look at original format
+
+```{r}
+read_lines("data/x0001_0100 v2.m",n_max=10)
+```
+
+```{r}
+read_lines("data/X101-200_original.txt",skip=3,n_max=3)
+```
+
+Function which rotates (a,b,c)=>(b,c,A). Note: does not handle 2a,2b,2c
+
+```{r}
+repl_fn <- function(s) {
+  s %>%
+    # needs local variables u,v,w so no overwriting
+    str_replace_all(c("\\ba(\\d)?\\b"="v\\1",
+                      "\\bb(\\d)?\\b"="w\\1",
+                      "\\bc(\\d)?\\b"="u\\1")) %>%
+    str_replace_all(c("\\bu(\\d)?\\b"="a\\1",
+                      "\\bv(\\d)?\\b"="b\\1",
+                      "\\bw(\\d)?\\b"="c\\1")) %>%
+    str_replace_all(c("\\b(sin|cos|tan|sec|csc|cot)(2|Half|Quarter)?A\\b"="\\1\\2V",
+                      "\\b(sin|cos|tan|sec|csc|cot)(2|Half|Quarter)?B\\b"="\\1\\2W",
+                      "\\b(sin|cos|tan|sec|csc|cot)(2|Half|Quarter)?C\\b"="\\1\\2U")) %>%
+    str_replace_all(c("\\b(sin|cos|tan|sec|csc|cot)(2|Half|Quarter)?U\\b"="\\1\\2A",
+                      "\\b(sin|cos|tan|sec|csc|cot)(2|Half|Quarter)?V\\b"="\\1\\2B",
+                      "\\b(sin|cos|tan|sec|csc|cot)(2|Half|Quarter)?W\\b"="\\1\\2C"))
+}
+```
+
+Rotate Trilins and spit out mathematica list {\"X(1)\", Hold@{1, 1, 1}, \"INCENTER\"},"
+
+{% raw %}
+```{r}
+df <- read_delim("data/X101-200_original.txt",skip=3,delim=";")
+df_rot <- df %>%
+  mutate(trilins2=repl_fn(trilins),
+         trilins3=repl_fn(trilins2)) %>%
+  mutate(math=str_glue("{{ \"X({X})\", Hold@{{{trilins},{trilins2},{trilins3}}},\"{name}\" }}"))
+df_rot$math %>% 
+  str_c(collapse=",\n") %>%
+  readr::write_file("data/X101_200_math.txt")
+```
+{% endraw %}
+

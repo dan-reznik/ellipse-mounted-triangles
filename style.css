@@ -1,0 +1,50 @@
+body .main-container {
+max-width: 2000px;
+}
+body content { zoom: 300%; }
+    
+.slick-slide {
+    margin-left: 50px;
+    margin-right: 20px;
+  }
+    
+.slick-prev:before {
+  color: white;
+  font-size: 50px;
+}
+
+.slick-next:before {
+  color: white;
+  font-size: 50px;
+}
+
+.slickR {
+  font-family: 'slick';
+  font-size: 40px;
+  line-height: 1;
+  max-height: 505px;
+  min-height: 505px;
+  object-fit: contain;
+}
+
+.tocify {
+/*  left: 40px;*/
+}
+
+.toc-content {
+/*  left: -20px;*/
+}
+
+img {
+/*height: 100px;
+width: 100px; */
+/*object-fit: contain;*/
+}
+
+#TOC {
+  position: fixed;
+  left: 10px;
+  width:200px;
+  max-width:20%;
+  overflow:auto;
+}

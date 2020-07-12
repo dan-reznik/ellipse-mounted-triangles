@@ -1,0 +1,18 @@
+---
+title: "Loci of Triangle Centers of Ellipse-Mounted Triangles"
+author: "Dan Reznik and Iverton Darlan"
+date: July, 2020
+output: github_document
+---
+
+```{r setup,echo=F}
+knitr::opts_chunk$set(echo = F)
+```
+
+A webpage for this project: [here](https://dan-reznik.github.io/ellipse-mounted-triangles/)
+
+```{r,out.width="50%"}
+knitr::include_graphics("pics/single_vtx_example.svg")
+```
+
+

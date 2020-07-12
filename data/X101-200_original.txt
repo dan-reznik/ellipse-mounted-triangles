@@ -1,0 +1,105 @@
+#constants:
+#sumS2 = sin2A+sin2B+sin2C
+#sumT2 = tan2A+tan2B+tan2C
+X;name;trilins;irrat
+101;Λ(INCENTER,ORTHOCENTER)Ψ(INCENTER,SYMMEDIAN POINT);a/(b-c);F
+102;Λ(INCENTER,ORTHOCENTER);a/(2 a4-(b+c)a3-(b-c)^2 a2(b-c)^2 (b+c)a-(b2-c2)^2);F
+103;ANTIPODE OF X(101);a/(2 a3-a2(b+c)-(b-c)^2 (b+c));F
+104;ANTIPODE OF X(100);1/(b3+c3-(a2+b c)(b+c)+2 a b c);F
+105;Λ(INCENTER,SYMMEDIAN POINT);1/(b2+c2-a(b+c));F
+106;Λ(INCENTER,CENTROID);a/(2 a-b-c);F
+107;Ψ(SYMMEDIAN POINT,ORTHOCENTER);b c/((b2-c2)(b2+c2-a2)^2);F 
+108;Ψ(CIRCUMCENTER,INCENTER);1/((b-c)(b+c-a)(b2+c2-a2));F
+109;Ψ(INCENTER,CIRCUMCENTER);a/((b-c)(b+c-a));F
+110;FOCUS OF KIEPERT PARABOLA;a/(b2-c2);F
+111;PARRY POINT;a/(2 a2-b2-c2);F
+112;Ψ(ORTHOCENTER,SYMMEDIAN POINT);a/((b2-c2)(b2+c2-a2));
+113;JERABEK ANTIPODE;b2/(b2 SA-2 SA SC)+c2/(c2 SC-2 SA SB);F
+114;KIEPERT ANTIPODE;(b4+c4-a2 b2-a2 c2)(2 a4+b4+c4-a2 b2-a2 c2-2 b 2 c2)/a;F
+115;CENTER OF KIEPERT HYPERBOLA;b c(b2-c2)^2;F
+116;MIDPOINT OF X(4) AND X(103);b c((b-c)^2(b2+b c+c2-a b-a c));F
+117;MIDPOINT OF X(4) AND X(109);(b2 c)/(c(secB-secC)+a(secB-secA))+(c2 b)/(b(secC-secB)+a(secC-secA));F
+118;MIDPOINT OF X(4) AND X(101);(b3 c)/((b-c)/tanA+(b-a)/tanC)+(c3 b)/((c-b)/tanA+(c-a)/tanB);F
+119;X(119) = FEUERBACH ANTIPODE;cscA(cosB+cosC-1)(sin2B+sin2C+2(cosA-1)(sinB+sinC));T
+120;X(105)-OF-MEDIAL-TRIANGLE;b c(2 a b c-(b+c)(a2+(b-c)^2))(b2+c2-a b-a c);F
+121;X(106)-OF-MEDIAL-TRIANGLE;b c(b+c-2 a)(b3+c3+a(b2+c2)-2 b c(b+c));F
+122;X(107)-OF-MEDIAL-TRIANGLE;(b2-c2)^2 (cosA-cosB cosC)/tan2A;F
+123;X(108)-OF-MEDIAL-TRIANGLE; cscA(secB-secC)(secA(sin2B-sin2C)+sinC tanC-sinB tanB);T
+124;X(109)-OF-MEDIAL-TRIANGLE;b c(b+c-a)(b-c)^2 ((b+c)(b2+c2-a2-b c)+a b c);F
+125;CENTER OF JERABEK HYPERBOLA;b c(b2+c2-a2)(b2-c2)^2;F
+126;X(111)-OF-MEDIAL-TRIANGLE;b c(2 a2-b2-c2)(b4+c4+a2(b2+c2)-4 b2 c2);F
+127;X(112)-OF-MEDIAL-TRIANGLE;b c(sin2B-sin2C)((b2-c2)sin2A-b2 sin2B+c2 sin2C);T
+128;X(74)-OF-ORTHIC-TRIANGLE;secA(cos2B+cos2C)(1+2 cos2A)(cos2A+2 cos2B cos2C);F
+129;X(98)-OF-ORTHIC-TRIANGLE;secA sin2A(sin2B+sin2C)(sin2B^4+ sin2C^4-(sin2A sin2B)^2-(sin2A sin2C)^2)(sin2A^4+sin2A^2(sin2B sin2C-sin2B^2-sin2C^2)+(sin2B sin2C)(sin2B-sin2C)^2);T
+130;X(99)-OF-ORTHIC-TRIANGLE;sinA(sin2B+sin2C)(sin2B-sin2C)^2 (sin2A^2+sin2B sin2C);F
+131;INTERSECTION OF LINES X(3)X(125) AND X(4)X(135);secA(2 sumT2-sumS2(sec2B+sec2C))(sumT2-S sec2A);T
+132;X(2)X(107)∩X(4)X(32);secA (sin2A^2+(sin2B-sin2C)^2+sin2A(sin2A-sin2B-sin2C)) (sin2B^2+sin2C^2-sin2A sin2B-sin2A sin2C);T
+133;INTERSECTION OF LINES X(4)X(74) AND X(5)X(122);secA((sin2B-sin2C)^2+sin2A sin2B+sin2A sin2C-2 sin2B sin2C)(2 sin2A-sin2B-sin2C);T
+134;X(107)-OF-ORTHIC-TRIANGLE;secA sin2A(sin2B^2-sin2C^2)(sin2B^2+sin2C^2-sin2A^2)^2 (sin2C(sin2A^2-sin2B^2)(sin2A^2+sin2B^2-sin2C^2)^2 - sin2B(sin2A^2-sin2C^2)(sin2A^2+ sin2C^2-sin2B^2)^2);T
+135;INTERSECTION OF LINE X(4)X(131) AND X(25)X(114);secA(sin2B/(sec2C-sec2A)+sin2C/(sec2A-sec2B));T
+136;INTERSECTION OF LINE X(4)X(110) AND X(25)X(132);((b2-c2)^2 (a4+b4+c4-2 a2 b2-2 a2 c2)/(a2-b2-c2))/a;F
+137;X(110)-OF-ORTHIC-TRIANGLE;secA(sin2B+sin2C)(sin2B-sin2C)^2 (sin2A^2-sin2B^2-sin2C^2-sin2B sin2C);T
+138;X(111)-OF-ORTHIC-TRIANGLE;secA(sin2B/(2 sin2B^2-sin2C^2-sin2A^2)+sin2C/(2 sin2C^2-sin2A^2-sin2B^2));T
+139;X(112)-OF-ORTHIC-TRIANGLE;secA(sin2B+sin2C)(sin2B-sin2C)^2(sin2B^2+sin2C^2- sin2A^2)(sin2B^4+sin2C^4-sin2A^4+(sin2B sin2C)(sin2B^2+sin2C^2-sin2A^2));T
+140;MIDPOINT OF X(3) AND X(5);2 a3-3 a(b2+c2)+(b2-c2)^2/a;F
+141;COMPLEMENT OF SYMMEDIAN POINT; b c(b2+c2);F
+142;COMPLEMENT OF X(9); b+c-((b-c)^2)/a;F
+143;NINE-POINT CENTER OF ORTHIC TRIANGLE; a (a2 b2+a2 c2+2 b2 c2-b4-c4)(a4+b4+c4-2 a2 b2-2 a2 c2-b2 c2);F
+144;ANTICOMPLEMENT OF X(7);3 a-2(b+c)-((b-c)^2)/a;F
+145;ANTICOMPLEMENT OF NAGEL POINT; b c(3 a- b-c);F
+146;REFLECTION OF X(20) IN X(110);a^9+a^7(b2+c2)-a^5(8 b4-9 b2 c2+8 c4)+2 a3 (b2+c2)(4 b4-7 b2 c2+4 c4)-a(b2-c2)^2 (b4+9 b2 c2+c4)-(b2-c2)^4 (b2+c2)/a;F
+147;TARRY POINT OF ANTICOMPLEMENTARY TRIANGLE;b c(a8+(b2+c2)a6-(2 b4+3 b2 c2+2 c4)a4+(b6+b4 c2+b2 c4+c6)a2-b8+b6 c2+b2 c6-c8);F
+148;STEINER POINT OF ANTICOMPLEMENTARY TRIANGLE;b c(a4-(b2-c2)^2+b2 c2-a2 b2-a2 c2);F
+149;REFLECTION OF X(20) IN X(104);b c(b3+c3-a3+(a2-b c)(b+c)+a(b c-b2-c2));F
+150;REFLECTION OF X(20) IN X(103);b c(b4+c4-a4+a(b c2+c b2-b3-c3)-b c(a2+b2+c2)+(b+c)a3);F
+151;REFLECTION OF X(20) IN X(109);(1/a)(a+b+c)^2 (a^10-a^9(b+c)+12 a^5 b(b-c)^2 c(b+c)+a (b-c)^6 (b+c)^3+2 a^7(b+c)(b2-4 b c+c2)-(b2-c2)^4 (b2-b c+c2)+a^8 (b2+3 b c+c2)-2 a3(b-c)^4 (b+c)(b2+4 b c+c2)+4 a4(b2-c2)^2 (2 b2-3 b c+2 c2)+2 a6(-4 b4+b3 c+8 b2 c2+b c3-4 c4)-a2(b2-c2)^2 (b4-6 b3 c+14 b2 c2-6 b c3+c4));F
+152;REFLECTION OF X(20) IN X(101);(1/a)(a8-a^7 (b+c)+a(b-c)^4 (b+c)^3-a4 b c(b2-6 b c+c2)-(b-c)^4 (b+c)^2 (b2+b c+c2)+a^6 (2 b2+b c+2 c2)-a5(b+c)(5 b2-6 b c+5 c2)+a3(b-c)^2(b+c)(5 b2+6 b c+5 c2)-a2(b-c)^2 (2 b4+5 b3 c+10 b2 c2+5 b c3+2 c4));F
+153;REFLECTION OF X(20) IN X(100);(1/a)(a^7-a6(b+c)-(b-c)^4(b+c)^3-a5(b2-7 b c+c2)+a4(b+c) (b2-6 b c+c2)+a(b2-c2)^2(b2-5 b c+c2)+a2(b-c)^2(b+c)(b2+6 b c+c2)-a3(b4+2 b3 c-10 b2 c2+2 b c3+c4));F
+154;X(3)-CEVA CONJUGATE OF X(6);a(tanB+tanC-tanA);F
+155;EIGENCENTER OF ORTHIC TRIANGLE; cosA(cosB^2+cosC^2-cosA^2);F
+156;X(5)-OF-TANGENTIAL-TRIANGLE;a(a2(a2-b2)^3+(-3 a6+2 a4 b2+b6)c2+(3 a4-2 b4)c4+(-a2+b2)c6);F
+157;X(6)-OF-TANGENTIAL-TRIANGLE;a(b3 cosB+c3 cosC-a3 cosA);F
+158;X(19)-CROSS CONJUGATE OF X(92);secA^2;F
+159;X(9)-OF-TANGENTIAL-TRIANGLE;a((a2+b2+c2)sin2A+(c2-b2-a2)sin2B+(b2-c2-a2)sin2C);F
+160;X(37)-OF-TANGENTIAL-TRIANGLE;a((b2+c2)sin2A+(c2-a2)sin2B+(b2-a2)sin2C);F
+161;X(63)-OF-TANGENTIAL-TRIANGLE;a((a2+b2+c2)sin2A^2+(c2-b2-a2)sin2B^2+(b2-c2-a2)sin2C^2);F
+162;CEVAPOINT OF X(108) AND X(109);1/((b2-c2)(b2+c2-a2));F
+163;TRILINEAR PRODUCT X(6)*X(110);a2/(b2-c2);F
+164;INCENTER OF EXCENTRAL TRIANGLE;sinHalfB+sinHalfC-sinHalfA;T
+165;CENTROID OF THE EXCENTRAL TRIANGLE;3 a2-2 a(b+c)-(b-c)^2;F
+166;GERGONNE POINT OF EXCENTRAL TRIANGLE;tanHalfA/(cosHalfB+cosHalfC-cosHalfA)-tanHalfB/(cosHalfC+cosHalfA-cosHalfB)-tanHalfC/(cosHalfA+cosHalfB-cosHalfC);T
+167;NAGEL POINT OF EXCENTRAL TRIANGLE;sinHalfB(cosHalfC+cosHalfA-cosHalfB)/cosHalfB+sinHalfC(cosHalfA+cosHalfB-cosHalfC)/cosHalfC-sinHalfA(cosHalfB+cosHalfC-cosHalfA)/cosHalfA;T
+168;MITTENPUNKT OF EXCENTRAL TRIANGLE;b/(1-sinHalfB)+c/(1-sinHalfC)-a/(1-sinHalfA);T
+169;X(85)-CEVA CONJUGATE OF X(1);a3-a2(b+c)+a(b2+c2)-(b-c)2(b+c);F
+170;X(9)-ALEPH CONJUGATE OF X(9);-tanHalfA/(cosHalfA^2)+tanHalfB/(cosHalfB^2)+tanHalfC/(cosHalfC^2);T
+171;{X(2),X(31)}-HARMONIC CONJUGATE OF X(238);a2+b c;F
+172;TRILINEAR PRODUCT X(6)*X(171);a3+a b c;F
+173;CONGRUENT ISOSCELIZERS POINT;cosHalfB+cosHalfC-cosHalfA;T
+174;YFF CENTER OF CONGRUENCE;1/cosHalfA;T
+175;ISOPERIMETRIC POINT;(cosHalfB cosHalfC)/cosHalfA-1;T
+176;EQUAL DETOUR POINT;(cosHalfB cosHalfC)/cosHalfA+1;T
+177;1st MID-ARC POINT;(cosHalfB+cosHalfC)/cosHalfA;T
+178;2nd MID-ARC POINT;(cosHalfB+cosHalfC)/a;T
+179;1st AJIMA-MALFATTI POINT;1/(cosQuarterA^4);T
+180;2nd AJIMA-MALFATTI POINT;1/(1 + 2(cosQuarterC cosQuarterA/cosQuarterB)^2)+1/(1 + 2(cosQuarterB cosQuarterA/cosQuarterC)^2)-1/(1 + 2(cosQuarterC cosQuarterB/cosQuarterA)^2);T
+181;APOLLONIUS POINT;a(b+c)^2 /(b+c-a);F
+182;MIDPOINT OF BROCARD DIAMETER;a(a4-a2 b2-a2 c2-2 b2 c2);F
+183;TRILINEAR PRODUCT X(75)X(182);1/tanA+tanOmega;T
+184;INVERSE OF X(125) IN THE BROCARD CIRCLE;a2 cosA;F
+185;NAGEL POINT OF THE ORTHIC TRIANGLE;cosA(cosB^2+cosC^2);F
+186;INVERSE-IN-CIRCUMCIRCLE OF X(4);4 cosA-1/cosA;F
+187;INVERSE-IN-CIRCUMCIRCLE OF X(6) (SCHOUTE CENTER);a(2 a2-b2-c2);F
+188;2nd MID-ARC POINT OF ANTICOMPLEMENTARY TRIANGLE;1/sinHalfA;T
+189;CYCLOCEVIAN CONJUGATE OF X(8);(b c)/(cosB+cosC-cosA-1);F
+190;YFF PARABOLIC POINT;b c/(b-c);F
+191;X(10)-CEVA CONJUGATE OF X(1);(b+c-a)(b c+c a+a b)+b3+c3-a3;F
+192;X(1)-CEVA CONJUGATE OF X(2);b c(c a+a b-b c);F
+193;X(4)-CEVA CONJUGATE OF X(2);3 a-(b2+c2)/a;F
+194;X(6)-CEVA CONJUGATE OF X(2);b c(a2 b2+a2 c2-b2 c2);F
+195;X(5)-CEVA CONJUGATE OF X(3);a(a8+b8+c8-4 a6(b2+c2)+a4(6 b4+6 c4+5 b2 c2)-a2(4 b6+4 c6-b4 c2-b2 c4)-2 b2 c2(b4+c4-b2 c2));F
+196;X(7)-CEVA CONJUGATE OF X(4);(cosB+cosC-cosA-1)tanHalfA/cosA;T
+197;X(8)-CEVA CONJUGATE OF X(6);a(-a2 tanHalfA+b2 tanHalfB+c2 tanHalfC);T
+198;X(9)-CEVA CONJUGATE OF X(6);a(a3+a2(b+c)-a(b+c)^2-(b-c)^2 (b+c));F
+199;X(10)-CEVA CONJUGATE OF X(6);a(b4+c4-a4+(b2+c2-a2)(b c+c a+a b));F
+200;X(8)-CEVA CONJUGATE OF X(9);(b+c-a)^2;F
+376;CENTROID OF THE ANTIPEDAL TRIANGLE OF X(2);2 cosA-cosB cosC;F
