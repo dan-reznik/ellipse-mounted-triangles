@@ -104,7 +104,7 @@ g_fnames <- as.character(dir_ls("loci16_150")) %>% str_c(g_url,"/",.)
 slickR(
     g_fnames,
     slideId = "slider_loci16",
-    height=500,
+    height=600,
     #width = 800,
     width='95%',
     slideType = 'img-lazy') + 
@@ -123,7 +123,7 @@ g_fnames <- as.character(dir_ls("loci16_200")) %>% str_c(g_url,"/",.)
 slickR(
     g_fnames,
     slideId = "slider_loci16",
-    height=400,
+    height=500,
     #width = 800,
     width='95%',
     slideType = 'img-lazy') + 
@@ -142,7 +142,7 @@ g_fnames <- as.character(dir_ls("loci16_300")) %>% str_c(g_url,"/",.)
 slickR(
     g_fnames,
     slideId = "slider_loci16",
-    height=300,
+    height=400,
     #width = 800,
     width='95%',
     slideType = 'img-lazy') + 
