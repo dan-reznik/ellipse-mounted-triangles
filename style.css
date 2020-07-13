@@ -8,22 +8,22 @@ body content { zoom: 300%; }
     margin-right: 20px;
   }
     
-.slick-prev:before {
+#loci-carousels .slick-prev:before {
   color: white;
   font-size: 50px;
 }
 
-.slick-next:before {
+#loci-carousels .slick-next:before {
   color: white;
   font-size: 50px;
 }
 
 .slickR {
   font-family: 'slick';
-  font-size: 40px;
+  /*font-size: 20px;*/
   line-height: 1;
-  max-height: 505px;
-  min-height: 505px;
+  max-height: 550px;
+  min-height: 550px;
   object-fit: contain;
 }
 
@@ -55,4 +55,31 @@ width: 100px; */
   width:200px;
   max-width:20%;
   overflow:auto;
+}
+
+[class^="navegador"] .slick-prev:before {
+  visibility: hidden;
+}
+
+[class^="navegador"] .slick-next:before {
+  visibility: hidden;
+}
+
+[class^="navegador"] .slick-list {
+  visibility: hidden;
+}
+
+.navegador {
+  max-height: 0px;
+  min-height: 0px;
+}
+
+.navegador .slick-dots {
+  top: -50px;
+}
+
+.navegador .slick-dots li {
+  width: 60px;
+  color: White;
+  font-size: 20px;
 }

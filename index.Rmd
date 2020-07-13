@@ -98,36 +98,12 @@ dir_ls("loci16_150") %>% as.character %>% length
 ```
 
 ## Aspect Ratio: a/b=1.5 {-}
-<!--
-```{r}
-cP1 <- htmlwidgets::JS("function(slick,index) {
-                            return '<a>'+(index+1)+'</a>';
-                       }")
-opts_dot_number <- settings(
-    initialSlide = 0,
-    slidesToShow = 10,
-    slidesToScroll = 10,
-    focusOnSelect = TRUE,
-    dots = TRUE,
-    customPaging = cP1
-    )
-```
--->
-
-<!--
-
-
-slick_dots <- slickR(
-  obj = nba_player_logo$uri,
-  height = 100,
-  width = "95%"
-)
--->
 
 ```{r}
 g_fnames <- as.character(dir_ls("loci16_150")) %>% str_c(g_url,"/",.)
 slickR(
     g_fnames,
+    slideId = "slider_loci16",
     height=500,
     #width = 800,
     width='95%',
@@ -136,7 +112,8 @@ slickR(
     fade=T,
     #adaptiveHeight=T,
     lazyLoad = 'ondemand',
-    speed=20) # + opts_dot_number
+    speed=20,
+    asNavFor = ".slick-initialized") # + opts_dot_number
 ```
 
 ## Aspect Ratio: a/b=2.0 {-}
@@ -145,6 +122,7 @@ slickR(
 g_fnames <- as.character(dir_ls("loci16_200")) %>% str_c(g_url,"/",.)
 slickR(
     g_fnames,
+    slideId = "slider_loci16",
     height=400,
     #width = 800,
     width='95%',
@@ -153,7 +131,8 @@ slickR(
     fade=T,
     #adaptiveHeight=T,
     lazyLoad = 'ondemand',
-    speed=20)
+    speed=20,
+    asNavFor = ".slick-initialized")
 ```
 
 ## Aspect Ratio: a/b=3.0 {-}
@@ -162,6 +141,7 @@ slickR(
 g_fnames <- as.character(dir_ls("loci16_300")) %>% str_c(g_url,"/",.)
 slickR(
     g_fnames,
+    slideId = "slider_loci16",
     height=300,
     #width = 800,
     width='95%',
@@ -170,7 +150,8 @@ slickR(
     fade=T,
     #adaptiveHeight=T,
     lazyLoad = 'ondemand',
-    speed=20)
+    speed=20,
+    asNavFor = ".slick-initialized")
 ```
 
 ```{js, echo=FALSE}
@@ -182,6 +163,33 @@ $('body').on('shown.bs.tab', function(e) {
               });
 });
 ```
+
+# {.navegador .unlisted .unnumbered}
+
+```{r ola}
+cP1 <- htmlwidgets::JS("function(slick,index) {
+                            return '<a>'+(1+10*index)+'</a>';
+                            
+                       }")
+
+slickR(
+      obj = (1:(g_fnames %>% length)) %>% as.character,
+      height=20,
+      width="95%",
+      slideId = "navegador",
+      slideType = 'p') + 
+      slickR::settings(
+        lazyLoad = 'ondemand',
+        speed=20,
+        dots = T,
+        slidesToScroll = 10
+        ,slidesToShow = 10
+        ,focusOnSelect = T
+        ,customPaging = cP1
+        ,asNavFor = ".slick-initialized"
+      )
+```
+
 
 # Conclusion
 
