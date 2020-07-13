@@ -128,6 +128,7 @@ slick_dots <- slickR(
 g_fnames <- as.character(dir_ls("loci16_150")) %>% str_c(g_url,"/",.)
 slickR(
     g_fnames,
+    slideId = "slider_loci16",
     height=500,
     #width = 800,
     width='95%',
@@ -136,7 +137,8 @@ slickR(
     fade=T,
     #adaptiveHeight=T,
     lazyLoad = 'ondemand',
-    speed=20) # + opts_dot_number
+    speed=20,
+    asNavFor = ".slick-initialized") # + opts_dot_number
 ```
 
 ## Aspect Ratio: a/b=2.0 {-}
@@ -145,6 +147,7 @@ slickR(
 g_fnames <- as.character(dir_ls("loci16_200")) %>% str_c(g_url,"/",.)
 slickR(
     g_fnames,
+    slideId = "slider_loci16",
     height=400,
     #width = 800,
     width='95%',
@@ -153,7 +156,8 @@ slickR(
     fade=T,
     #adaptiveHeight=T,
     lazyLoad = 'ondemand',
-    speed=20)
+    speed=20,
+    asNavFor = ".slick-initialized")
 ```
 
 ## Aspect Ratio: a/b=3.0 {-}
@@ -162,6 +166,7 @@ slickR(
 g_fnames <- as.character(dir_ls("loci16_300")) %>% str_c(g_url,"/",.)
 slickR(
     g_fnames,
+    slideId = "slider_loci16",
     height=300,
     #width = 800,
     width='95%',
@@ -170,7 +175,8 @@ slickR(
     fade=T,
     #adaptiveHeight=T,
     lazyLoad = 'ondemand',
-    speed=20)
+    speed=20,
+    asNavFor = ".slick-initialized")
 ```
 
 ```{js, echo=FALSE}
