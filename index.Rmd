@@ -15,7 +15,7 @@ output:
       fig_caption: yes
       number_sections: yes
 link-citations: yes
-bibliography: [elliptic_billiards_v2.bib]
+bibliography: [references.bib]
 csl: computer.csl
 ---
 
@@ -44,7 +44,7 @@ g_url <- "https://dan-reznik.github.io/ellipse-mounted-triangles"
 
 # Intro
 
-This exploration is inspired by Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal. A construction is given for the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) based on the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ sliding along the circle centered at $V_1$ and of radius $r=|V_2-V_1|$:
+This exploration is inspired by Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal. On that site an intriguing construction is given for the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) [@odehnal2015-conics] based on the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ sliding along the circle centered at $V_1$ and of radius $r=|V_2-V_1|$:
 
 ```{r,out.width="30%"}
 knitr::include_graphics("pics/single_vtx_strophoid.svg")
