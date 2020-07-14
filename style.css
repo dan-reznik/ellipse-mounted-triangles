@@ -45,11 +45,11 @@ body content { zoom: 300%; }
 /*  left: -20px;*/
 }
 
-.col-md-3 {
+.col-md-2 {
   width:15%;
 }
 
-.col-md-9 {
+.col-md-10 {
   width:75%;
 }
 
