@@ -1,7 +1,7 @@
-body .main-container {
+/*body .main-container {
 max-width: 2000px;
 }
-body content { zoom: 300%; }
+body content { zoom: 300%; }*/
     
 /*.slick-slide {
     margin-left: 50px;
@@ -45,20 +45,20 @@ body content { zoom: 300%; }
 /*  left: -20px;*/
 }
 
-.col-md-2 {
+/*.col-md-2 {
   width:15%;
 }
 
 .col-md-10 {
   width:75%;
-}
+}*/
 
 #TOC {
-  position: fixed;
-  left: 10px;
+  /*position: fixed;
   width:200px;
-  max-width:20%;
-  overflow:auto;
+  overflow:auto; */
+  left: 20px;
+  max-width: 16%;
 }
 
 [class^="navigator"] .slick-prev:before {
