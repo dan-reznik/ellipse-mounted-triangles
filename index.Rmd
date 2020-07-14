@@ -4,6 +4,8 @@ author: Dan Reznik and Iverton Darlan
 date: July, 2020
 output:
   bookdown::html_document2:
+      includes: 
+        before_body: header.html
       theme: darkly
       highlight: tango
       css: style.css
@@ -101,8 +103,39 @@ dir_ls("loci16_150") %>% as.character %>% length
 
 ```{r}
 g_fnames <- as.character(dir_ls("loci16_150")) %>% str_c(g_url,"/",.)
+
+#change dot's by numbers
+cP1 <- htmlwidgets::JS("function(slick,index) {
+                            return '<a>'+(1+10*index)+'</a>';
+                            
+                       }")
+#Navigator menu
+navigator_slicker <- function(){
+  slickR(
+    obj = (1:((g_fnames %>% length)-1)) %>% as.character,
+    height=20,
+    width="95%",
+    slideId = "navigator",
+    slideType = 'p') + 
+    slickR::settings(
+      lazyLoad = 'ondemand',
+      speed=20,
+      dots = T,
+      #adaptiveHeight = T,
+      slidesToScroll = 10
+      ,slidesToShow = 10
+      ,focusOnSelect = T
+      ,customPaging = cP1
+      ,asNavFor = ".slick-initialized"
+    )
+}
+```
+
+```{r}
+navigator_slicker()
+
 slickR(
-    g_fnames,
+    g_fnames[1:(length(g_fnames)-1)],
     slideId = "slider_loci16",
     height=600,
     #width = 800,
@@ -119,9 +152,12 @@ slickR(
 ## Aspect Ratio: a/b=2.0 {-}
 
 ```{r}
+navigator_slicker()
+
 g_fnames <- as.character(dir_ls("loci16_200")) %>% str_c(g_url,"/",.)
+
 slickR(
-    g_fnames,
+    g_fnames[1:(length(g_fnames)-1)],
     slideId = "slider_loci16",
     height=500,
     #width = 800,
@@ -139,8 +175,11 @@ slickR(
 
 ```{r}
 g_fnames <- as.character(dir_ls("loci16_300")) %>% str_c(g_url,"/",.)
+
+navigator_slicker()
+
 slickR(
-    g_fnames,
+    g_fnames[1:(length(g_fnames)-1)],
     slideId = "slider_loci16",
     height=400,
     #width = 800,
@@ -153,43 +192,6 @@ slickR(
     speed=20,
     asNavFor = ".slick-initialized")
 ```
-
-```{js, echo=FALSE}
-$('body').on('shown.bs.tab', function(e) {
-  $(e.target).parents('.tabset')
-             .find('.active .slick-slider')
-             .each(function() {
-               this.slick.setPosition()
-              });
-});
-```
-
-# {.navegador .unlisted .unnumbered}
-
-```{r ola}
-cP1 <- htmlwidgets::JS("function(slick,index) {
-                            return '<a>'+(1+10*index)+'</a>';
-                            
-                       }")
-
-slickR(
-      obj = (1:(g_fnames %>% length)) %>% as.character,
-      height=20,
-      width="95%",
-      slideId = "navegador",
-      slideType = 'p') + 
-      slickR::settings(
-        lazyLoad = 'ondemand',
-        speed=20,
-        dots = T,
-        slidesToScroll = 10
-        ,slidesToShow = 10
-        ,focusOnSelect = T
-        ,customPaging = cP1
-        ,asNavFor = ".slick-initialized"
-      )
-```
-
 
 # Conclusion
 

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <script language="JavaScript">
+    $('body').on('shown.bs.tab', function(e) {
+      $(e.target).parents('.tabset')
+                 .find('.active .slick-slider')
+                 .each(function() {
+                   this.slick.setPosition()
+                  });
+    });
+  </script>
+  
+  <script>
+    $(".toc-content.col-xs-12.col-sm-8.col-md-9")
+    .removeClass("toc-content col-xs-12 col-sm-8 col-md-9")
+    .addClass("toc-content col-xs-12 col-sm-9 col-md-10");
+    
+    $(".col-xs-12.col-sm-4.col-md-3")
+    .removeClass("col-xs-12 col-sm-4 col-md-3")
+    .addClass("col-xs-12 col-sm-3 col-md-2");
+  </script>
+</html>
