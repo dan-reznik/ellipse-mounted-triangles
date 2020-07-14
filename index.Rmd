@@ -50,7 +50,7 @@ This exploration is inspired by Robert Ferréol's wonderful [Mathcurve](https://
 knitr::include_graphics("pics/single_vtx_strophoid.svg")
 ```
 
-Here we study a related system: let $V_1,V_2$ still be two fixed vertices of a triangle, but with a third one $P(t)$ sliding along an *ellipse* $\mathcal{E}$. What are loci of Triangle Centers $X_k$ [@etc] for different "mountings" of $V_1,V_2$ on $\mathcal{E}$?
+Here we study a related system: let $V_1,V_2$ still be two fixed vertices of a triangle, but with a third one $P(t)$ sliding along an *ellipse* $\mathcal{E}$ with semi-axes $a,b$. What are loci of Triangle Centers $X_k$ [@etc] for different "mountings" of $V_1,V_2$ on $\mathcal{E}$?
 
 As an example, consider the locus (purple) of the Barycenter $X_2$ when $V_1,V_2$ are the right and top vertices of $\mathcal{E}$: 
 
@@ -58,7 +58,7 @@ As an example, consider the locus (purple) of the Barycenter $X_2$ when $V_1,V_2
 knitr::include_graphics("pics/single_vtx_example.svg")
 ```
 
-Let $(a,b)$ denote the semi-axes of $\mathcal{E}$. Indeed, it can be shown that for whichever $V_1,V_2$, the locus of $X_2$ is, up to translation, a fixed ellipse $(a/3,b/3)$,
+Indeed, it can be shown that for whichever $V_1,V_2$, the locus of $X_2$ is, up to translation, a fixed ellipse $(a/3,b/3)$,
 
 Consider the following 16 possibilities for the fixed vertices:
 
