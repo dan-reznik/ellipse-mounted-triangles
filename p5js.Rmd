@@ -43,14 +43,29 @@ df_formulas <- read_csv2("data/x0001_0200 formulas.csv",col_types = "ccc")
 df_formulas %>% glimpse
 ```
 
+Cria dicionario key-value
+
 ```{r}
 vars_db <- read_lines("data/vars_db.txt") %>%
   str_split(fixed(" = "))
-df_vars
 vars_dict <- new.env()
 vars_db %>% walk(~assign(.x[1], .x[2], envir = vars_dict))
 ```
 
+```{r}
+get("b2",env=vars_dict)
+```
+
+Cria tibble key-value
+
+```{r}
+read_delim("data/vars_db.txt",
+           delim=fixed("="),
+           col_types = "cc",
+           col_names=c("lhs","rhs"))
+```
+
+# Iverton: trazer alem dos lookups as dependencias no bloco de variaveis 
 
 ```{r utils}
 strip_first_last <- function(s) s%>%str_sub(start=2)%>%str_sub(end=-2)
@@ -60,12 +75,18 @@ strip_first_last <- function(s) s%>%str_sub(start=2)%>%str_sub(end=-2)
 #    secB*(-(S*sec2B)+sumT2)*(-((sec2A+sec2C)*sumS2)+2*sumT2),
 #    secC*(-(S*sec2C)+sumT2)*(-((sec2A+sec2B)*sumS2)+2*sumT2)
 #         ]
-# vars:  "secA"  "S"     "sec2A" "sumT2" "sec2B" "sec2C" "sumS2" "secB"  "secC" 
-my_js <- function(trilins,vars,n) {
+# vars:  c("secA","S","sec2A","sumT2","sec2B","sec2C","sumS2","secB","secC") 
+my_js <- function(n,trilins,vars) {
   s3 <- str_split(trilins%>%strip_first_last,fixed(","))
+  vars_block <- vars %>% map_chr(~str_c("   let ",.x,"=",
+                                        get(.x,env=vars_dict),";")) %>%
+    str_c(collapse="\n")
   s3 %>% map_chr(~str_glue(
     "function trilin_X{n}(orbit, [a, b, c]) {{",
     # inserir bloco de variaveis usando vars_dict ou inner_join
+    "   /* begin vars */",
+    "{vars_block}",
+    "   /* end vars */",
     "   let v1 = {.x[1]};",
     "   let v2 = {.x[2]};",
     "   let v3 = {.x[3]};",
@@ -89,9 +110,11 @@ df_formulas_vars <- df_formulas %>%
 
 
 ```{r}
-df_formulas$trilins[131] %>% my_js(3) %>% cat
+my_js(
+  131,
+  df_formulas_vars$trilins[131],
+  df_formulas_vars$vars[[131]]) %>% cat
 ```
-
 
 {% raw %}
 ```{r}
