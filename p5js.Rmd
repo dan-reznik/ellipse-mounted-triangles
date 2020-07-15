@@ -86,7 +86,7 @@ df_vars_db <- read_delim("data/vars_db.txt",
 ```
 
 # Iverton: trazer alem dos lookups as dependencias no bloco de variaveis 
-
+{% raw %}
 ```{r utils}
 strip_first_last <- function(s) s%>%str_sub(start=2)%>%str_sub(end=-2)
 # n: 131
@@ -117,6 +117,7 @@ my_js <- function(n,trilins,vars) {
     .sep="\n"))
 }
 ```
+{% endraw %}
 
 ```{r}
 delete_me <- function(x) {(x%in%c("","Math","pow","a","b","c"))|(str_detect(x,"^[:digit:]$"))}
