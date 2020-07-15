@@ -1,0 +1,131 @@
+---
+title: "R Notebook"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+lines <- read_lines("data/x0001_0200 cform v1.txt"
+                    #,n_max=10
+                    ) %>%
+  head(-1)
+lines %>% head
+```
+
+```{r}
+lines_clean <- lines %>%
+  str_replace(fixed('", '),'";') %>%
+  str_replace(fixed(', "'),';"') %>%
+  str_remove("^\\{") %>%
+  str_remove("\\},?$") %>%
+  str_replace(fixed("List("),"[") %>%
+  str_replace(fixed(');"'),'];"')%>%
+  str_remove_all(fixed('\"')) %>%
+  str_replace_all(" ([+-]) ","\\1") %>%
+  str_replace_all(fixed(", "),",") %>%
+  str_replace_all(fixed("Power"),"Math.pow")
+lines_clean %>% head
+```
+
+Salva csv
+
+```{r}
+c("kimberling;trilins;name",
+  lines_clean) %>% write_lines("data/x0001_0200 formulas.csv")
+```
+
+
+```{r}
+df_formulas <- read_csv2("data/x0001_0200 formulas.csv",col_types = "ccc")
+df_formulas %>% glimpse
+```
+
+```{r}
+vars_db <- read_lines("data/vars_db.txt") %>%
+  str_split(fixed(" = "))
+df_vars
+vars_dict <- new.env()
+vars_db %>% walk(~assign(.x[1], .x[2], envir = vars_dict))
+```
+
+
+```{r utils}
+strip_first_last <- function(s) s%>%str_sub(start=2)%>%str_sub(end=-2)
+# n: 131
+# triple: [
+#    secA*(-(S*sec2A)+sumT2)*(-((sec2B+sec2C)*sumS2)+2*sumT2),
+#    secB*(-(S*sec2B)+sumT2)*(-((sec2A+sec2C)*sumS2)+2*sumT2),
+#    secC*(-(S*sec2C)+sumT2)*(-((sec2A+sec2B)*sumS2)+2*sumT2)
+#         ]
+# vars:  "secA"  "S"     "sec2A" "sumT2" "sec2B" "sec2C" "sumS2" "secB"  "secC" 
+my_js <- function(trilins,vars,n) {
+  s3 <- str_split(trilins%>%strip_first_last,fixed(","))
+  s3 %>% map_chr(~str_glue(
+    "function trilin_X{n}(orbit, [a, b, c]) {{",
+    # inserir bloco de variaveis usando vars_dict ou inner_join
+    "   let v1 = {.x[1]};",
+    "   let v2 = {.x[2]};",
+    "   let v3 = {.x[3]};",
+    "   tris = [v1,v2,v3];",
+    "   return trilin_to_cartesian(orbit, [a, b, c], tris);",
+    "}}",
+    .sep="\n"))
+}
+```
+
+```{r}
+delete_me <- function(x) {(x%in%c("","Math","pow","a","b","c"))|(str_detect(x,"^[:digit:]$"))}
+
+df_formulas_vars <- df_formulas %>%
+  mutate(vars=trilins %>%
+           strip_first_last %>% # remove colchetes [ ... ]
+           str_split("[^[:alnum:]]") %>% # split por nao-alfanums (+,-,/)
+           map(~discard(.x,delete_me)) %>% # remove indesejaveis
+           map(unique)) # so reporta unicos
+```
+
+
+```{r}
+df_formulas$trilins[131] %>% my_js(3) %>% cat
+```
+
+
+{% raw %}
+```{r}
+df_forumulas %>%
+  mutate(js=my_js())
+```
+{% endraw %}
+
+
+```{js,eval=F}
+function trilin_X{k}(orbit, [a, b, c]) {
+  { preamble set vars }
+  let v1 = a*(b2+c2-a2);
+  let v2 = b*(c2+a2-b2);
+  let v3 = c*(a2+b2-c2)
+  tris = [v1,v2,v3];
+  return trilin_to_cartesian(orbit, [a, b, c], tris);
+}
+
+function trilin_cyclic(orbit, fn, [a, b, c]) {
+  tris = [fn(a, b, c), fn(b, c, a), fn(c, a, b)];
+  return trilin_to_cartesian(orbit, [a, b, c], tris);
+}
+
+function trilin_X3(orbit, [a, b, c]) {
+  let cyclic = function(a, b, c) {
+    let a2 = a * a,
+      b2 = b * b,
+      c2 = c * c;
+    return a * (b2 + c2 - a2);
+  }
+  return trilin_cyclic(orbit, cyclic, [a, b, c]);
+}
+
+
+
+```
