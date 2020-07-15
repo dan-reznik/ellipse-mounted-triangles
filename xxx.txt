@@ -1,1 +1,0 @@
-let v1 = 1,1,1;\nlet v2 = NA;\nlet v3 = NA;\ntris = [v1,v2,v3];\nreturn trilin_to_cartesian(orbit, [a, b, c], tris);

@@ -16,6 +16,11 @@ lines %>% head
 ```
 
 ```{r}
+lines[132]
+```
+
+
+```{r}
 lines_clean <- lines %>%
   str_replace(fixed('", '),'";') %>%
   str_replace(fixed(', "'),';"') %>%
@@ -26,8 +31,18 @@ lines_clean <- lines %>%
   str_remove_all(fixed('\"')) %>%
   str_replace_all(" ([+-]) ","\\1") %>%
   str_replace_all(fixed(", "),",") %>%
-  str_replace_all(fixed("Power"),"Math.pow")
+  str_replace_all(fixed("Power"),"Math.pow") # %>%
+  # iverton: precisamos que o separador entre trilineares seja o |
+  # para nao conflitar com a virgula do Math.pow
+  # 1) regex troca o separador do math.pow p/ & 
+  # 2) regex troca virgulas por |
+  # 3) regex troca o & de volta pra virgula
+  
 lines_clean %>% head
+```
+
+```{r}
+lines_clean[132]
 ```
 
 Salva csv
@@ -43,6 +58,11 @@ df_formulas <- read_csv2("data/x0001_0200 formulas.csv",col_types = "ccc")
 df_formulas %>% glimpse
 ```
 
+```{r}
+df_formulas[132,]
+```
+
+
 Cria dicionario key-value
 
 ```{r}
@@ -56,10 +76,10 @@ vars_db %>% walk(~assign(.x[1], .x[2], envir = vars_dict))
 get("b2",env=vars_dict)
 ```
 
-Cria tibble key-value
+[not used yet] Cria tibble key-value
 
 ```{r}
-read_delim("data/vars_db.txt",
+df_vars_db <- read_delim("data/vars_db.txt",
            delim=fixed("="),
            col_types = "cc",
            col_names=c("lhs","rhs"))
@@ -77,7 +97,8 @@ strip_first_last <- function(s) s%>%str_sub(start=2)%>%str_sub(end=-2)
 #         ]
 # vars:  c("secA","S","sec2A","sumT2","sec2B","sec2C","sumS2","secB","secC") 
 my_js <- function(n,trilins,vars) {
-  s3 <- str_split(trilins%>%strip_first_last,fixed(","))
+  # iverton mudar abaixio o separador das trilineares p/ "|"
+  s3 <- str_split(trilins%>%strip_first_last,fixed(",")) # fixed("|")
   vars_block <- vars %>% map_chr(~str_c("   let ",.x,"=",
                                         get(.x,env=vars_dict),";")) %>%
     str_c(collapse="\n")
@@ -110,10 +131,11 @@ df_formulas_vars <- df_formulas %>%
 
 
 ```{r}
+xn <- 132
 my_js(
-  131,
-  df_formulas_vars$trilins[131],
-  df_formulas_vars$vars[[131]]) %>% cat
+  xn,
+  df_formulas_vars$trilins[xn],
+  df_formulas_vars$vars[[xn]]) %>% cat
 ```
 
 {% raw %}
