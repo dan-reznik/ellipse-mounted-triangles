@@ -2,10 +2,10 @@
 // cosDoubleAngle, sinHalfAngle, cosHalfAngle,
 // sinCosTripleAngle, getSinApmB
 
-let cPi3 = Math.cos(Math.PI/3);
-let sPi3 = Math.sin(Math.PI/3);
-let cPi6 = Math.cos(Math.PI/6);
-let sPi6 = Math.sin(Math.PI/6);
+const cPi3 = Math.cos(Math.PI/3);
+const sPi3 = Math.sin(Math.PI/3);
+const cPi6 = Math.cos(Math.PI/6);
+const sPi6 = Math.sin(Math.PI/6);
 
 function oneOv(x) { return 1.0/x; }
 
