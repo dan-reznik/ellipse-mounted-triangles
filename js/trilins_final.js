@@ -1,4 +1,4 @@
-// support fns
+// support fn
 
 function trilin_to_cartesian(
   [A, B, C], //(* vertices *)
@@ -13,10 +13,17 @@ function trilin_to_cartesian(
   ];
 }
 
-// cartesians
-function get_Xn(orbit, sides, fn_raw) {
-  let t = fn_raw(sides);
-  return trilin_to_cartesian(orbit, sides, t);
+function get_Xn_low(orbit, sides, fn_trilin) {
+  return fn_trilin(orbit,sides);
+}
+
+function get_fn_trilin(n) {
+  let fn_name = sprintf("trilin_X%d",n);
+  return window[fn_name];
+}
+
+function get_Xn(orbit, sides, n) {
+  return get_Xn_low(orbit, sides, get_fn_trilin(n));
 }
 
 const cPi3 = Math.cos(Math.PI/3);
@@ -58,7 +65,6 @@ function sinTripleAngle(s, c, s2, c2) {
   return s2*c + s*c2;
 }
 
-// triangle centers
 
 function trilin_X1(orbit, [a, b, c]) {
    /* begin vars */
@@ -1544,7 +1550,7 @@ function trilin_X97(orbit, [a, b, c]) {
    let cotB=cosB/sinB;
    let cotA=cosA/sinA;
    /* end vars */
-   let v1 = cotA*(cosB*cosC+sinB*sinC);
+   let v1 = cotA/(cosB*cosC+sinB*sinC);
    let v2 = cotB/(cosA*cosC+sinA*sinC);
    let v3 = cotC/(cosA*cosB+sinA*sinB);
    let tris = [v1,v2,v3];
@@ -1623,16 +1629,14 @@ function trilin_X102(orbit, [a, b, c]) {
 
 function trilin_X103(orbit, [a, b, c]) {
    /* begin vars */
+   let a2=a*a;
    let c2=c*c;
    let b2=b*b;
-   let a2=a*a;
-   let c3=c2*c;
-   let b3=b2*b;
    let a3=a2*a;
    /* end vars */
    let v1 = a/(2*a3-a2*(b+c)-Math.pow(b-c,2)*(b+c));
-   let v2 = b/(2*b3-b2*(a+c)-Math.pow(-a+c,2)*(a+c));
-   let v3 = c/(-(Math.pow(a-b,2)*(a+b))-(a+b)*c2+2*c3);
+   let v2 = b/(2*a3-b2*(a+c)-Math.pow(-a+c,2)*(a+c));
+   let v3 = c/(2*a3-Math.pow(a-b,2)*(a+b)-(a+b)*c2);
    let tris = [v1,v2,v3];
    return trilin_to_cartesian(orbit, [a, b, c], tris);
 }
@@ -1647,8 +1651,8 @@ function trilin_X104(orbit, [a, b, c]) {
    let b3=b2*b;
    /* end vars */
    let v1 = 1/(b3+2*a*b*c-(b+c)*(a2+b*c)+c3);
-   let v2 = 1/(a3+2*a*b*c-(a+c)*(b2+a*c)+c3);
-   let v3 = 1/(a3+b3+2*a*b*c-(a+b)*(a*b+c2));
+   let v2 = 1/(a3+2*Math.pow(a,2)*c-(a+c)*(b2+a*c)+c3);
+   let v3 = 1/(a3+2*Math.pow(a,2)*b+b3-(a+b)*(a*b+c2));
    let tris = [v1,v2,v3];
    return trilin_to_cartesian(orbit, [a, b, c], tris);
 }
@@ -1671,8 +1675,8 @@ function trilin_X106(orbit, [a, b, c]) {
 
    /* end vars */
    let v1 = a/(2*a-b-c);
-   let v2 = b/(-a+2*b-c);
-   let v3 = c/(-a-b+2*c);
+   let v2 = b/(a-c);
+   let v3 = c/(a-b);
    let tris = [v1,v2,v3];
    return trilin_to_cartesian(orbit, [a, b, c], tris);
 }
@@ -1779,8 +1783,8 @@ function trilin_X114(orbit, [a, b, c]) {
    let b4=b2*b2;
    /* end vars */
    let v1 = ((-(a2*b2)+b4-a2*c2+c4)*(2*a4-a2*b2+b4-a2*c2-4*b*c2+c4))/a;
-   let v2 = ((a4-a2*b2-b2*c2+c4)*(a4-a2*b2+2*b4-4*a2*c-b2*c2+c4))/b;
-   let v3 = ((a4+b4-a2*c2-b2*c2)*(a4-4*a*b2+b4-a2*c2-b2*c2+2*c4))/c;
+   let v2 = ((a4-a2*b2-b2*c2+c4)*(3*a4-4*a2*b-a2*b2-b2*c2+c4))/b;
+   let v3 = ((a4+b4-a2*c2-b2*c2)*(3*a4-4*b*b2+b4-a2*c2-b2*c2))/c;
    let tris = [v1,v2,v3];
    return trilin_to_cartesian(orbit, [a, b, c], tris);
 }
@@ -1903,8 +1907,8 @@ function trilin_X121(orbit, [a, b, c]) {
    let b3=b2*b;
    /* end vars */
    let v1 = b*c*(-2*a+b+c)*(b3-2*b*c*(b+c)+a*(b2+c2)+c3);
-   let v2 = a*c*(a-2*b+c)*(a3-2*a*c*(a+c)+b*(a2+c2)+c3);
-   let v3 = a*b*(a+b-2*c)*(a3-2*a*b*(a+b)+b3+(a2+b2)*c);
+   let v2 = a*c*(-a+c)*(a3-2*a*c*(a+c)+b*(a2+c2)+c3);
+   let v3 = a*b*(-a+b)*(a3-2*a*b*(a+b)+b3+(a2+b2)*c);
    let tris = [v1,v2,v3];
    return trilin_to_cartesian(orbit, [a, b, c], tris);
 }
@@ -2182,9 +2186,9 @@ function trilin_X134(orbit, [a, b, c]) {
    let sin2A=getSin(cos2A);
    let secA=1/cosA;
    /* end vars */
-   let v1 = secA*sin2A*(Math.pow(sin2B,2)-Math.pow(sin2C,2))*Math.pow(-Math.pow(sin2A,2)+Math.pow(sin2B,2)+Math.pow(sin2C,2);
-   let v2 = 2)*((Math.pow(sin2A,2)-Math.pow(sin2B,2))*sin2C*Math.pow(Math.pow(sin2A,2)+Math.pow(sin2B,2)-Math.pow(sin2C,2);
-   let v3 = 2)-sin2B*(Math.pow(sin2A,2)-Math.pow(sin2C,2))*Math.pow(Math.pow(sin2A,2)-Math.pow(sin2B,2)+Math.pow(sin2C,2);
+   let v1 = secA*sin2A*(Math.pow(sin2B,2)-Math.pow(sin2C,2))*Math.pow(-Math.pow(sin2A,2)+Math.pow(sin2B,2)+Math.pow(sin2C,2),2)*((Math.pow(sin2A,2)-Math.pow(sin2B,2))*sin2C*Math.pow(Math.pow(sin2A,2)+Math.pow(sin2B,2)-Math.pow(sin2C,2),2)-sin2B*(Math.pow(sin2A,2)-Math.pow(sin2C,2))*Math.pow(Math.pow(sin2A,2)-Math.pow(sin2B,2)+Math.pow(sin2C,2),2));
+   let v2 = secB*sin2B*(-Math.pow(sin2A,2)+Math.pow(sin2C,2))*Math.pow(Math.pow(sin2A,2)-Math.pow(sin2B,2)+Math.pow(sin2C,2),2)*(-((-Math.pow(sin2A,2)+Math.pow(sin2B,2))*sin2C*Math.pow(Math.pow(sin2A,2)+Math.pow(sin2B,2)-Math.pow(sin2C,2),2))+sin2A*(Math.pow(sin2B,2)-Math.pow(sin2C,2))*Math.pow(-Math.pow(sin2A,2)+Math.pow(sin2B,2)+Math.pow(sin2C,2),2));
+   let v3 = secC*(Math.pow(sin2A,2)-Math.pow(sin2B,2))*sin2C*Math.pow(Math.pow(sin2A,2)+Math.pow(sin2B,2)-Math.pow(sin2C,2),2)*(sin2B*(-Math.pow(sin2A,2)+Math.pow(sin2C,2))*Math.pow(Math.pow(sin2A,2)-Math.pow(sin2B,2)+Math.pow(sin2C,2),2)-sin2A*(-Math.pow(sin2B,2)+Math.pow(sin2C,2))*Math.pow(-Math.pow(sin2A,2)+Math.pow(sin2B,2)+Math.pow(sin2C,2),2));
    let tris = [v1,v2,v3];
    return trilin_to_cartesian(orbit, [a, b, c], tris);
 }

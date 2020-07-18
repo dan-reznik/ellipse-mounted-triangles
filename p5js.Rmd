@@ -11,15 +11,21 @@ source("p5js_support.R")
 
 Prepare txt and csv formulas
 ```{r, eval=F}
-prepare_formulas("data/x0001_0200 cform v1.txt", 
+prepare_formulas("data/x0001_0200 cform v2.txt", 
                  "data/x0001_0200 formulas.csv")
 ```
 
 Read csv formulas
 ```{r}
 df_formulas <- read_csv2("data/x0001_0200 formulas.csv",col_types = "ccc")
-df_formulas %>% glimpse
+df_formulas %>% filter(kimberling == "X(134)")
 ```
+```{r}
+vars_db <- read_delim("data/vars_db.txt", delim = fixed("="), col_names = F)
+vars_dict <- new.env()
+vars_db %>% pwalk(~(vars_dict[[..1]] <- ..2))
+```
+
 
 Create equations and dependencies dictionaries
 ```{r}
@@ -41,7 +47,7 @@ df_formulas_vars <- df_formulas %>%
 
 Teste das funcoes js criadas
 ```{r}
-xn = 13
+xn = 134
 create_function_js(xn,df_formulas_vars$trilins[xn],
       df_formulas_vars$vars[[xn]]) %>% 
   cat

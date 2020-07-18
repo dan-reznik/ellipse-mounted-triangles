@@ -4,6 +4,18 @@ clean_lines <- function(lines) {
     str_replace(fixed(', "'),';"') %>%
     str_remove("^\\{") %>%
     str_remove("\\},?$") %>%
+    str_remove_all(fixed('\"')) %>%
+    str_replace_all(" ([+-]) ","\\1") %>%
+    str_replace_all(fixed(", "),",") %>%
+    str_replace_all(fixed("Power"),"Math.pow")
+}
+
+clean_lines_old <- function(lines) {
+  lines %>%
+    str_replace(fixed('", '),'";') %>%
+    str_replace(fixed(', "'),';"') %>%
+    str_remove("^\\{") %>%
+    str_remove("\\},?$") %>%
     str_replace(fixed("List("),"[") %>%
     str_replace(fixed(');"'),'];"')%>%
     str_remove_all(fixed('\"')) %>%
@@ -40,7 +52,7 @@ delete_me <- function(x) {
 
 process_trilins <- function(trilins){
   trilins %>%
-    strip_first_last %>% # remove colchetes [ ... ]
+    #strip_first_last %>% # remove colchetes [ ... ]
     str_split("[^[:alnum:]]") %>% # split por nao-alfanums (+,-,/)
     map(~discard(.x,delete_me)) %>% # remove indesejaveis
     map(unique)
@@ -72,7 +84,7 @@ create_function_js <- function(n,trilins,vars) {
   #n <- 1### TESTES
   #vars <- df_formulas_vars$vars[[n]]### TESTES
   #trilins <- df_formulas_vars$trilins[n]### TESTES
-  s3 <- str_split(trilins%>%strip_first_last,fixed("|"))
+  s3 <- str_split(trilins,fixed("|"))
   vars_with_dependence_vars <- add_dependence_vars(vars, vars)
   if(length(vars_with_dependence_vars)>0){
     vars_with_dependence_vars_unique_invert <- vars_with_dependence_vars %>%
@@ -83,7 +95,7 @@ create_function_js <- function(n,trilins,vars) {
       vars_with_dependence_vars 
   }
   vars_block <- vars_with_dependence_vars_unique_invert %>% 
-    map_chr(~str_c("   let ",.x,"=",                                                                           get(.x,env=vars_dict),";")) %>%
+    map_chr(~str_c("   let ",.x,"=",get(.x,env=vars_dict),";")) %>%
     str_c(collapse="\n")
   
   s3 %>% map_chr(~str_glue(
