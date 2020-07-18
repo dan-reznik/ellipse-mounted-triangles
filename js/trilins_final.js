@@ -1,6 +1,23 @@
-// triAreaHeron, lawOfCosines, getSin, oneOv
-// cosDoubleAngle, sinHalfAngle, cosHalfAngle,
-// sinCosTripleAngle, getSinApmB
+// support fns
+
+function trilin_to_cartesian(
+  [A, B, C], //(* vertices *)
+  [a, b, c], // (* side lengths *)
+  [x, y, z]) //(* trilinears *)
+{
+  //let denom = a * x + b * y + c * z;
+  let v = [a * x, b * y, c * z];
+  let denom = sum(v);
+  return [dot(v, [A[0], B[0], C[0]]) / denom,
+    dot(v, [A[1], B[1], C[1]]) / denom
+  ];
+}
+
+// cartesians
+function get_Xn(orbit, sides, fn_raw) {
+  let t = fn_raw(sides);
+  return trilin_to_cartesian(orbit, sides, t);
+}
 
 const cPi3 = Math.cos(Math.PI/3);
 const sPi3 = Math.sin(Math.PI/3);
@@ -41,6 +58,7 @@ function sinTripleAngle(s, c, s2, c2) {
   return s2*c + s*c2;
 }
 
+// triangle centers
 
 function trilin_X1(orbit, [a, b, c]) {
    /* begin vars */

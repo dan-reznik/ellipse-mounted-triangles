@@ -56,7 +56,7 @@ write js code + constants
 ```{r}
 read_file("js/support_functions.js") %>%
   str_c("\n\n", codigo_js) %>%
-  write_file("js/codigo_final.js")
+  write_file("js/trilins_final.js")
 ```
 
 Modelos para js code

@@ -1,6 +1,30 @@
-// triAreaHeron, lawOfCosines, getSin, oneOv
-// cosDoubleAngle, sinHalfAngle, cosHalfAngle,
-// sinCosTripleAngle, getSinApmB
+// support fn
+
+function trilin_to_cartesian(
+  [A, B, C], //(* vertices *)
+  [a, b, c], // (* side lengths *)
+  [x, y, z]) //(* trilinears *)
+{
+  //let denom = a * x + b * y + c * z;
+  let v = [a * x, b * y, c * z];
+  let denom = sum(v);
+  return [dot(v, [A[0], B[0], C[0]]) / denom,
+    dot(v, [A[1], B[1], C[1]]) / denom
+  ];
+}
+
+function get_Xn_low(orbit, sides, fn_trilin) {
+  return fn_trilin(orbit,sides);
+}
+
+function get_fn_trilin(n) {
+  let fn_name = sprintf("trilin_X%d",n);
+  return window[fn_name];
+}
+
+function get_Xn(orbit, sides, n) {
+  return get_Xn_low(orbit, sides, get_fn_trilin(n));
+}
 
 const cPi3 = Math.cos(Math.PI/3);
 const sPi3 = Math.sin(Math.PI/3);
