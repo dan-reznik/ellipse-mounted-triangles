@@ -3,188 +3,63 @@ title: "R Notebook"
 output: html_document
 ---
 
+import
 ```{r}
 library(tidyverse)
+source("p5js_support.R")
 ```
 
-```{r}
-lines <- read_lines("data/x0001_0200 cform v1.txt"
-                    #,n_max=10
-                    ) %>%
-  head(-1)
-lines %>% head
+Prepare txt and csv formulas
+```{r, eval=F}
+prepare_formulas("data/x0001_0200 cform v1.txt", 
+                 "data/x0001_0200 formulas.csv")
 ```
 
-```{r}
-lines[132]
-```
-
-
-```{r}
-lines_clean <- lines %>%
-  str_replace(fixed('", '),'";') %>%
-  str_replace(fixed(', "'),';"') %>%
-  str_remove("^\\{") %>%
-  str_remove("\\},?$") %>%
-  str_replace(fixed("List("),"[") %>%
-  str_replace(fixed(');"'),'];"')%>%
-  str_remove_all(fixed('\"')) %>%
-  str_replace_all(" ([+-]) ","\\1") %>%
-  str_replace_all(fixed(", "),",") %>%
-  str_replace_all(fixed("Power"),"Math.pow") %>%
-  #Substitui separador entre trilineares por |
-  str_replace_all("Math.pow\\(([^,]+),([^,]+)\\)", "Math.pow\\(\\1&\\2)") %>%
-  str_replace_all(fixed(","), "|") %>%
-  str_replace_all(fixed("&"), ",")
-```
-
-```{r}
-lines_clean[132]
-```
-
-Salva csv
-
-```{r}
-c("kimberling;trilins;name",
-  lines_clean) %>% write_lines("data/x0001_0200 formulas.csv")
-```
-
-
+Read csv formulas
 ```{r}
 df_formulas <- read_csv2("data/x0001_0200 formulas.csv",col_types = "ccc")
 df_formulas %>% glimpse
 ```
 
+Create equations and dependencies dictionaries
 ```{r}
-df_formulas[132,]
-```
+vars_db_intersect <- vars_db %>% 
+  mutate(dependence = intersect_vars(X1,X2))
 
-
-Cria dicionario key-value
-
-```{r}
-vars_db <- read_delim("data/vars_db.txt", col_names = F, delim="=")
-vars_dict <- new.env()
-vars_db %>% pwalk(~assign(..1, ..2, envir = vars_dict))
-```
-
-```{r}
-get("b2",env=vars_dict)
-```
-
-
-Cria dicionarios com equacoes e dependencias
-```{r}
-auxiliar_dependencias <- character(nrow(vars_db))
-for(index in 1:nrow(vars_db)){
-  variaveis_equacao <- vars_db[[2]][index] %>%
-    str_split(boundary("word")) %>%
-    first
-  lista_dependencias <- NULL
-  for(variavel in variaveis_equacao){
-    if(variavel %in% vars_db[[1]])
-      lista_dependencias <- str_c(lista_dependencias, "|", variavel)
-  }
-  if(!is_null(lista_dependencias))
-    auxiliar_dependencias[[index]] <- lista_dependencias %>%
-    str_remove(fixed("|"))
-}
 vars_dict_eq <- new.env()
 vars_dict_dependence <- new.env()
-vars_db <- vars_db %>% mutate(dependence = auxiliar_dependencias)
-vars_db %>% pwalk(~assign(..1, ..2, envir = vars_dict_eq))
-vars_db %>% pwalk(~assign(..1, ..3, envir = vars_dict_dependence))
+vars_db_intersect %>% pwalk(~(vars_dict_eq[[..1]] <- ..2))
+vars_db_intersect %>% pwalk(~(vars_dict_dependence[[..1]] <- ..3))
 #get("tanA",env=vars_dict_dependence)
 ```
 
-{% raw %}
-```{r utils}
-strip_first_last <- function(s) s%>%str_sub(start=2)%>%str_sub(end=-2)
-
-add_dependence_vars <- function(vars, vars_all){
-  if(length(vars)>0){
-    for(var in vars){
-       list_dependences <- get(var, env=vars_dict_dependence)
-       var_dep <- list_dependences %>%
-         str_split(fixed("|")) %>%
-         first
-       if(list_dependences != ""){
-         vars_all <- vars_all %>% append(var_dep)
-         vars_all <- add_dependence_vars(var_dep, vars_all)
-       }
-    }
-  }
-  return(vars_all)
-}
-
-
-# n: 131
-# triple: [
-#    secA*(-(S*sec2A)+sumT2)*(-((sec2B+sec2C)*sumS2)+2*sumT2),
-#    secB*(-(S*sec2B)+sumT2)*(-((sec2A+sec2C)*sumS2)+2*sumT2),
-#    secC*(-(S*sec2C)+sumT2)*(-((sec2A+sec2B)*sumS2)+2*sumT2)
-#         ]
-# vars:  c("secA","S","sec2A","sumT2","sec2B","sec2C","sumS2","secB","secC") 
-my_js <- function(n,trilins,vars) {
-  #n <- 1### TESTES
-  #vars <- df_formulas_vars$vars[[n]]### TESTES
-  #trilins <- df_formulas_vars$trilins[n]### TESTES
-  
-  s3 <- str_split(trilins%>%strip_first_last,fixed("|"))
-  vars_with_dependence_vars <- add_dependence_vars(vars, vars)
-  if(length(vars_with_dependence_vars)>0){
-    vars_with_dependence_vars_unique_invert <- vars_with_dependence_vars %>%
-      `[`(length(vars_with_dependence_vars):1) %>%
-      unique()
-  } else{
-    vars_with_dependence_vars_unique_invert <- vars_with_dependence_vars 
-  }
-  vars_block <- vars_with_dependence_vars_unique_invert %>% map_chr(~str_c("   let ",.x,"=",
-                                        get(.x,env=vars_dict),";")) %>%
-    str_c(collapse="\n")
-
-  s3 %>% map_chr(~str_glue(
-    "function trilin_X{n}(orbit, [a, b, c]) {{",
-    # inserir bloco de variaveis usando vars_dict ou inner_join
-    "   /* begin vars */",
-    "{vars_block}",
-    "   /* end vars */",
-    "   let v1 = {.x[1]};",
-    "   let v2 = {.x[2]};",
-    "   let v3 = {.x[3]};",
-    "   tris = [v1,v2,v3];",
-    "   return trilin_to_cartesian(orbit, [a, b, c], tris);",
-    "}}",
-    .sep="\n"))
-}
-```
-{% endraw %}
-
+process trilins column
 ```{r}
-delete_me <- function(x) {(x%in%c("","Math","pow","a","b","c"))|(str_detect(x,"^[:digit:]$"))}
-
 df_formulas_vars <- df_formulas %>%
-  mutate(vars=trilins %>%
-           strip_first_last %>% # remove colchetes [ ... ]
-           str_split("[^[:alnum:]]") %>% # split por nao-alfanums (+,-,/)
-           map(~discard(.x,delete_me)) %>% # remove indesejaveis
-           map(unique)) # so reporta unicos
+  mutate(vars=trilins %>% process_trilins) # so reporta unicos
 ```
 
 Teste das funcoes js criadas
 ```{r}
-xn = 14
-my_js(xn,df_formulas_vars$trilins[[xn]],df_formulas_vars$vars[[xn]]) %>% cat
+xn = 13
+create_function_js(xn,df_formulas_vars$trilins[xn],
+      df_formulas_vars$vars[[xn]]) %>% 
+  cat
 ```
 
-{% raw %}
+create js code
 ```{r}
-df_formulas %>%
-  mutate(js = my_js())
+codigo_js <- create_js_code(df_formulas_vars) 
 ```
-{% endraw %}
 
+write js code + constants
+```{r}
+read_file("js/support_functions.js") %>%
+  str_c("\n\n", codigo_js) %>%
+  write_file("js/codigo_final.js")
+```
 
+Modelos para js code
 ```{js,eval=F}
 function trilin_X{k}(orbit, [a, b, c]) {
   { preamble set vars }
