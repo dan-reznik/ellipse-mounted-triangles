@@ -94,31 +94,31 @@
 {"X(94)", "csc3A|csc3B|csc3C", "ISOGONAL CONJUGATE OF X(50)"}
 {"X(95)", "(b2*c2)/(cosB*cosC + sinB*sinC)|(a2*c2)/(cosA*cosC + sinA*sinC)|(a2*b2)/(cosA*cosB + sinA*sinB)", "CEVAPOINT OF CENTROID AND CIRCUMCENTER"}
 {"X(96)", "sec2A/(cosB*cosC + sinB*sinC)|sec2B/(cosA*cosC + sinA*sinC)|sec2C/(cosA*cosB + sinA*sinB)", "ISOGONAL CONJUGATE OF X(52)"}
-{"X(97)", "cotA/(cosB*cosC + sinB*sinC)|cotB/(cosA*cosC + sinA*sinC)|cotC/(cosA*cosB + sinA*sinB)", "ISOGONAL CONJUGATE OF X(53)"}
+{"X(97)", "cotA*(cosB*cosC + sinB*sinC)|cotB/(cosA*cosC + sinA*sinC)|cotC/(cosA*cosB + sinA*sinB)", "ISOGONAL CONJUGATE OF X(53)"}
 {"X(98)", "(b*c)/(-(a2*b2) + b4 - a2*c2 + c4)|(a*c)/(a4 - a2*b2 - b2*c2 + c4)|(a*b)/(a4 + b4 - a2*c2 - b2*c2)", "TARRY POINT"}
 {"X(99)", "(b*c)/(b2 - c2)|(a*c)/(-a2 + c2)|(a*b)/(a2 - b2)", "STEINER POINT"}
 {"X(100)", "1/(b - c)|1/(-a + c)|1/(a - b)", "ANTICOMPLEMENT OF FEUERBACH POINT"}
 {"X(101)", "a/(b - c)|b/(-a + c)|c/(a - b)", "Λ(INCENTER,ORTHOCENTER)Ψ(INCENTER,SYMMEDIAN POINT)"}
 {"X(102)", "a/(2*a4 - a3*(b + c) - a*a2*Power(b - c,4)*(b + c) - Power(b2 - c2,2))|b/(2*b4 - b3*(a + c) - b*b2*Power(-a + c,4)*(a + c) - Power(-a2 + c2,2))|c/(-Power(a2 - b2,2) - Power(a - b,4)*(a + b)*c*c2 - (a + b)*c3 + 2*c4)", "Λ(INCENTER,ORTHOCENTER)"}
-{"X(103)", "a/(2*a3 - a2*(b + c) - Power(b - c,2)*(b + c))|b/(2*a3 - b2*(a + c) - Power(-a + c,2)*(a + c))|c/(2*a3 - Power(a - b,2)*(a + b) - (a + b)*c2)", "ANTIPODE OF X(101)"}
-{"X(104)", "1/(b3 + 2*a*b*c - (b + c)*(a2 + b*c) + c3)|1/(a3 + 2*Power(a,2)*c - (a + c)*(b2 + a*c) + c3)|1/(a3 + 2*Power(a,2)*b + b3 - (a + b)*(a*b + c2))", "ANTIPODE OF X(100)"}
+{"X(103)", "a/(2*a3 - a2*(b + c) - Power(b - c,2)*(b + c))|b/(2*b3 - b2*(a + c) - Power(-a + c,2)*(a + c))|c/(-(Power(a - b,2)*(a + b)) - (a + b)*c2 + 2*c3)", "ANTIPODE OF X(101)"}
+{"X(104)", "1/(b3 + 2*a*b*c - (b + c)*(a2 + b*c) + c3)|1/(a3 + 2*a*b*c - (a + c)*(b2 + a*c) + c3)|1/(a3 + b3 + 2*a*b*c - (a + b)*(a*b + c2))", "ANTIPODE OF X(100)"}
 {"X(105)", "1/(b2 - a*(b + c) + c2)|1/(a2 - b*(a + c) + c2)|1/(a2 + b2 - (a + b)*c)", "Λ(INCENTER,SYMMEDIAN POINT)"}
-{"X(106)", "a/(2*a - b - c)|b/(a - c)|c/(a - b)", "Λ(INCENTER,CENTROID)"}
+{"X(106)", "a/(2*a - b - c)|b/(-a + 2*b - c)|c/(-a - b + 2*c)", "Λ(INCENTER,CENTROID)"}
 {"X(107)", "(b*c)/((b2 - c2)*Power(-a2 + b2 + c2,2))|(a*c)/((-a2 + c2)*Power(a2 - b2 + c2,2))|(a*b)/((a2 - b2)*Power(a2 + b2 - c2,2))", "Ψ(SYMMEDIAN POINT,ORTHOCENTER)"}
 {"X(108)", "1/((b - c)*(-a + b + c)*(-a2 + b2 + c2))|1/((-a + c)*(a - b + c)*(a2 - b2 + c2))|1/((a - b)*(a + b - c)*(a2 + b2 - c2))", "Ψ(CIRCUMCENTER,INCENTER)"}
 {"X(109)", "a/((b - c)*(-a + b + c))|b/((-a + c)*(a - b + c))|c/((a - b)*(a + b - c))", "Ψ(INCENTER,CIRCUMCENTER)"}
 {"X(110)", "a/(b2 - c2)|b/(-a2 + c2)|c/(a2 - b2)", "FOCUS OF KIEPERT PARABOLA"}
 {"X(111)", "a/(2*a2 - b2 - c2)|b/(-a2 + 2*b2 - c2)|c/(-a2 - b2 + 2*c2)", "PARRY POINT"}
 {"X(112)", "a/((b2 - c2)*(-a2 + b2 + c2))|b/((-a2 + c2)*(a2 - b2 + c2))|c/((a2 - b2)*(a2 + b2 - c2))", "Ψ(ORTHOCENTER,SYMMEDIAN POINT)"}
-{"X(113)", "c2/(-2*SA*SB + c2*SC) + b2/(b2*SA - 2*SA*SC)|a2/(-2*SA*SB + a2*SC) + c2/(c2*SA - 2*SA*SC)|b2/(-2*SA*SB + b2*SC) + a2/(a2*SA - 2*SA*SC)", "JERABEK ANTIPODE"}
-{"X(114)", "((-(a2*b2) + b4 - a2*c2 + c4)*(2*a4 - a2*b2 + b4 - a2*c2 - 4*b*c2 + c4))/a|((a4 - a2*b2 - b2*c2 + c4)*(3*a4 - 4*a2*b - a2*b2 - b2*c2 + c4))/b|((a4 + b4 - a2*c2 - b2*c2)*(3*a4 - 4*b*b2 + b4 - a2*c2 - b2*c2))/c", "KIEPERT ANTIPODE"}
+{"X(113)", "sinB*sinC*(sinB/(cosB - 2*cosA*cosC) + sinC/(-2*cosA*cosB + cosC))|sinA*sinC*(sinA/(cosA - 2*cosB*cosC) + sinC/(-2*cosA*cosB + cosC))|sinA*sinB*(sinA/(cosA - 2*cosB*cosC) + sinB/(cosB - 2*cosA*cosC))", "JERABEK ANTIPODE"}
+{"X(114)", "((-(a2*b2) + b4 - a2*c2 + c4)*(2*a4 - a2*b2 + b4 - a2*c2 - 4*b*c2 + c4))/a|((a4 - a2*b2 - b2*c2 + c4)*(a4 - a2*b2 + 2*b4 - 4*a2*c - b2*c2 + c4))/b|((a4 + b4 - a2*c2 - b2*c2)*(a4 - 4*a*b2 + b4 - a2*c2 - b2*c2 + 2*c4))/c", "KIEPERT ANTIPODE"}
 {"X(115)", "b*c*Power(b2 - c2,2)|a*c*Power(-a2 + c2,2)|a*b*Power(a2 - b2,2)", "CENTER OF KIEPERT HYPERBOLA"}
 {"X(116)", "b*Power(b - c,2)*c*(-(a*b) + b2 - a*c + b*c + c2)|a*c*Power(-a + c,2)*(a2 - a*b + a*c - b*c + c2)|a*Power(a - b,2)*b*(a2 + a*b + b2 - a*c - b*c)", "MIDPOINT OF X(4) AND X(103)"}
 {"X(117)", "(b2*c)/(a*(-secA + secB) + c*(secB - secC)) + (b*c2)/(a*(-secA + secC) + b*(-secB + secC))|(a2*c)/(b*(secA - secB) + c*(secA - secC)) + (a*c2)/(a*(-secA + secC) + b*(-secB + secC))|(a2*b)/(b*(secA - secB) + c*(secA - secC)) + (a*b2)/(a*(-secA + secB) + c*(secB - secC))", "MIDPOINT OF X(4) AND X(109)"}
 {"X(118)", "(b*c3)/((-b + c)/tanA + (-a + c)/tanB) + (b3*c)/((b - c)/tanA + (-a + b)/tanC)|(a*c3)/((-b + c)/tanA + (-a + c)/tanB) + (a3*c)/((a - c)/tanB + (a - b)/tanC)|(a3*b)/((a - c)/tanB + (a - b)/tanC) + (a*b3)/((b - c)/tanA + (-a + b)/tanC)", "MIDPOINT OF X(4) AND X(101)"}
 {"X(119)", "(-1 + cosB + cosC)*cscA*(sin2B + sin2C + 2*(-1 + cosA)*(sinB + sinC))|(-1 + cosA + cosC)*cscB*(sin2A + sin2C + 2*(-1 + cosB)*(sinA + sinC))|(-1 + cosA + cosB)*cscC*(sin2A + sin2B + 2*(-1 + cosC)*(sinA + sinB))", "X(119) = FEUERBACH ANTIPODE"}
 {"X(120)", "b*c*(2*a*b*c - (a2 + Power(b - c,2))*(b + c))*(-(a*b) + b2 - a*c + c2)|a*c*(2*a*b*c - (a + c)*(b2 + Power(-a + c,2)))*(a2 - a*b - b*c + c2)|a*b*(a2 + b2 - a*c - b*c)*(2*a*b*c - (a + b)*(Power(a - b,2) + c2))", "X(105)-OF-MEDIAL-TRIANGLE"}
-{"X(121)", "b*c*(-2*a + b + c)*(b3 - 2*b*c*(b + c) + a*(b2 + c2) + c3)|a*c*(-a + c)*(a3 - 2*a*c*(a + c) + b*(a2 + c2) + c3)|a*b*(-a + b)*(a3 - 2*a*b*(a + b) + b3 + (a2 + b2)*c)", "X(106)-OF-MEDIAL-TRIANGLE"}
+{"X(121)", "b*c*(-2*a + b + c)*(b3 - 2*b*c*(b + c) + a*(b2 + c2) + c3)|a*c*(a - 2*b + c)*(a3 - 2*a*c*(a + c) + b*(a2 + c2) + c3)|a*b*(a + b - 2*c)*(a3 - 2*a*b*(a + b) + b3 + (a2 + b2)*c)", "X(106)-OF-MEDIAL-TRIANGLE"}
 {"X(122)", "(Power(b2 - c2,2)*(cosA - cosB*cosC))/tan2A|(Power(-a2 + c2,2)*(cosB - cosA*cosC))/tan2B|(Power(a2 - b2,2)*(-(cosA*cosB) + cosC))/tan2C", "X(107)-OF-MEDIAL-TRIANGLE"}
 {"X(123)", "cscA*(secB - secC)*(secA*(sin2B - sin2C) - sinB*tanB + sinC*tanC)|cscB*(-secA + secC)*(secB*(-sin2A + sin2C) + sinA*tanA - sinC*tanC)|cscC*(secA - secB)*(secC*(sin2A - sin2B) - sinA*tanA + sinB*tanB)", "X(108)-OF-MEDIAL-TRIANGLE"}
 {"X(124)", "b*Power(b - c,2)*c*(-a + b + c)*(a*b*c + (b + c)*(-a2 + b2 - b*c + c2))|a*c*Power(-a + c,2)*(a - b + c)*(a*b*c + (a + c)*(a2 - b2 - a*c + c2))|a*Power(a - b,2)*b*(a + b - c)*(a*b*c + (a + b)*(a2 - a*b + b2 - c2))", "X(109)-OF-MEDIAL-TRIANGLE"}

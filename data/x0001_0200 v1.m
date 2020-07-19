@@ -114,7 +114,7 @@
 { "X(110)", Hold@{a/(b2-c2),b/(c2-a2),c/(a2-b2)},"FOCUS OF KIEPERT PARABOLA" },
 { "X(111)", Hold@{a/(2 a2-b2-c2),b/(2 b2-c2-a2),c/(2 c2-a2-b2)},"PARRY POINT" },
 { "X(112)", Hold@{a/((b2-c2)(b2+c2-a2)),b/((c2-a2)(c2+a2-b2)),c/((a2-b2)(a2+b2-c2))},"\[CapitalPsi](ORTHOCENTER,SYMMEDIAN POINT)" },
-{ "X(113)", Hold@{b2/(b2 SA-2 SA SC)+c2/(c2 SC-2 SA SB),c2/(c2 SA-2 SA SC)+a2/(a2 SC-2 SA SB),a2/(a2 SA-2 SA SC)+b2/(b2 SC-2 SA SB)},"JERABEK ANTIPODE" },
+{"X(113)", Hold@{(sinB sinC)(sinC/(cosC-2 cosA cosB)+sinB/(cosB-2 cosA cosC)),(sinC sinA)(sinA/(cosA-2 cosB cosC)+sinC/(cosC-2 cosB cosA)),(sinA sinB)(sinB/(cosB-2 cosC cosA)+sinA/(cosA-2 cosC cosB))},"JERABEK ANTIPODE" },
 { "X(114)", Hold@{(b4+c4-a2 b2-a2 c2)(2 a4+b4+c4-a2 b2-a2 c2-2 b 2 c2)/a,(c4+a4-b2 c2-b2 a2)(2 b4+c4+a4-b2 c2-b2 a2-2 c 2 a2)/b,(a4+b4-c2 a2-c2 b2)(2 c4+a4+b4-c2 a2-c2 b2-2 a 2 b2)/c},"KIEPERT ANTIPODE" },
 { "X(115)", Hold@{b c (b2-c2)^2,c a (c2-a2)^2,a b (a2-b2)^2},"CENTER OF KIEPERT HYPERBOLA" },
 { "X(116)", Hold@{b c((b-c)^2(b2+b c+c2-a b-a c)),c a((c-a)^2(c2+c a+a2-b c-b a)),a b((a-b)^2(a2+a b+b2-c a-c b))},"MIDPOINT OF X(4) AND X(103)" },
