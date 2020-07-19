@@ -11,7 +11,7 @@ source("p5js_support.R")
 
 Prepare txt and csv formulas
 ```{r, eval=F}
-prepare_formulas("data/x0001_0200 cform v2.txt", 
+prepare_formulas("data/x0001_0200 cform v2a.txt", 
                  "data/x0001_0200 formulas.csv")
 ```
 
