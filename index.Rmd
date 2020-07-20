@@ -199,6 +199,7 @@ The following web-based wolfram apps demonstrating the above are available:
 
 - [1 mounting at a time](https://www.wolframcloud.com/objects/user-abf31092-d7c1-4e49-8701-dc65d547b021/locus%20vertex%20ellipse%20single%20v1).
 - [16 simultaneous mountings](https://www.wolframcloud.com/objects/user-abf31092-d7c1-4e49-8701-dc65d547b021/locus%20vertex%20ellipse%20v1)
+- Under construction: [p5.js interactive app](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/)
 
 Any comments, ideas, corrections, suggestions, and proofs contributed are very welcome. Email me at: `dreznik _theat_ gmail _thedot_ com`.
 
