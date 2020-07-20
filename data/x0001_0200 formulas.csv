@@ -95,7 +95,7 @@ X93;sec3A|sec3B|sec3C;ISOGONAL CONJUGATE OF X49
 X94;csc3A|csc3B|csc3C;ISOGONAL CONJUGATE OF X50
 X95;(b2*c2)/(cosB*cosC+sinB*sinC)|(a2*c2)/(cosA*cosC+sinA*sinC)|(a2*b2)/(cosA*cosB+sinA*sinB);CEVAPOINT OF CENTROID AND CIRCUMCENTER
 X96;sec2A/(cosB*cosC+sinB*sinC)|sec2B/(cosA*cosC+sinA*sinC)|sec2C/(cosA*cosB+sinA*sinB);ISOGONAL CONJUGATE OF X52
-X97;cotA*(cosB*cosC+sinB*sinC)|cotB/(cosA*cosC+sinA*sinC)|cotC/(cosA*cosB+sinA*sinB);ISOGONAL CONJUGATE OF X53
+X97;cotA/(cosB*cosC+sinB*sinC)|cotB/(cosA*cosC+sinA*sinC)|cotC/(cosA*cosB+sinA*sinB);ISOGONAL CONJUGATE OF X53
 X98;(b*c)/(-(a2*b2)+b4-a2*c2+c4)|(a*c)/(a4-a2*b2-b2*c2+c4)|(a*b)/(a4+b4-a2*c2-b2*c2);TARRY POINT
 X99;(b*c)/(b2-c2)|(a*c)/(-a2+c2)|(a*b)/(a2-b2);STEINER POINT
 X100;1/(b-c)|1/(-a+c)|1/(a-b);ANTICOMPLEMENT OF FEUERBACH POINT
@@ -112,7 +112,7 @@ X110;a/(b2-c2)|b/(-a2+c2)|c/(a2-b2);FOCUS OF KIEPERT PARABOLA
 X111;a/(2*a2-b2-c2)|b/(-a2+2*b2-c2)|c/(-a2-b2+2*c2);PARRY POINT
 X112;a/((b2-c2)*(-a2+b2+c2))|b/((-a2+c2)*(a2-b2+c2))|c/((a2-b2)*(a2+b2-c2));Ψ(ORTHOCENTER,SYMMEDIAN POINT)
 X113;sinB*sinC*(sinB/(cosB-2*cosA*cosC)+sinC/(-2*cosA*cosB+cosC))|sinA*sinC*(sinA/(cosA-2*cosB*cosC)+sinC/(-2*cosA*cosB+cosC))|sinA*sinB*(sinA/(cosA-2*cosB*cosC)+sinB/(cosB-2*cosA*cosC));JERABEK ANTIPODE
-X114;((-(a2*b2)+b4-a2*c2+c4)*(2*a4-a2*b2+b4-a2*c2-4*b*c2+c4))/a|((a4-a2*b2-b2*c2+c4)*(a4-a2*b2+2*b4-4*a2*c-b2*c2+c4))/b|((a4+b4-a2*c2-b2*c2)*(a4-4*a*b2+b4-a2*c2-b2*c2+2*c4))/c;KIEPERT ANTIPODE
+X114;((-(a2*b2)+b4-a2*c2+c4)*(2*a4-a2*b2+b4-a2*c2-2*b2*c2+c4))/a|((a4-a2*b2-b2*c2+c4)*(a4-a2*b2+2*b4-2*a2*c2-b2*c2+c4))/b|((a4+b4-a2*c2-b2*c2)*(a4-2*a2*b2+b4-a2*c2-b2*c2+2*c4))/c;KIEPERT ANTIPODE
 X115;b*c*(b2-c2)*(b2-c2)|a*c*(-a2+c2)*(-a2+c2)|a*b*(a2-b2)*(a2-b2);CENTER OF KIEPERT HYPERBOLA
 X116;b*(b-c)*(b-c)*c*(-(a*b)+b2-a*c+b*c+c2)|a*c*(-a+c)*(-a+c)*(a2-a*b+a*c-b*c+c2)|a*(a-b)*(a-b)*b*(a2+a*b+b2-a*c-b*c);MIDPOINT OF X4 AND X103
 X117;(b2*c)/(a*(-secA+secB)+c*(secB-secC))+(b*c2)/(a*(-secA+secC)+b*(-secB+secC))|(a2*c)/(b*(secA-secB)+c*(secA-secC))+(a*c2)/(a*(-secA+secC)+b*(-secB+secC))|(a2*b)/(b*(secA-secB)+c*(secA-secC))+(a*b2)/(a*(-secA+secB)+c*(secB-secC));MIDPOINT OF X4 AND X109
@@ -167,7 +167,7 @@ X165;3*a2-(b-c)*(b-c)-2*a*(b+c)|3*b2-(-a+c)*(-a+c)-2*b*(a+c)|-(a-b)*(a-b)-2*(a+b
 X166;tanHalfA/(-cosHalfA+cosHalfB+cosHalfC)-tanHalfB/(cosHalfA-cosHalfB+cosHalfC)-tanHalfC/(cosHalfA+cosHalfB-cosHalfC)|-(tanHalfA/(-cosHalfA+cosHalfB+cosHalfC))+tanHalfB/(cosHalfA-cosHalfB+cosHalfC)-tanHalfC/(cosHalfA+cosHalfB-cosHalfC)|-(tanHalfA/(-cosHalfA+cosHalfB+cosHalfC))-tanHalfB/(cosHalfA-cosHalfB+cosHalfC)+tanHalfC/(cosHalfA+cosHalfB-cosHalfC);GERGONNE POINT OF EXCENTRAL TRIANGLE
 X167;-(((-cosHalfA+cosHalfB+cosHalfC)*sinHalfA)/cosHalfA)+((cosHalfA-cosHalfB+cosHalfC)*sinHalfB)/cosHalfB+((cosHalfA+cosHalfB-cosHalfC)*sinHalfC)/cosHalfC|((-cosHalfA+cosHalfB+cosHalfC)*sinHalfA)/cosHalfA-((cosHalfA-cosHalfB+cosHalfC)*sinHalfB)/cosHalfB+((cosHalfA+cosHalfB-cosHalfC)*sinHalfC)/cosHalfC|((-cosHalfA+cosHalfB+cosHalfC)*sinHalfA)/cosHalfA+((cosHalfA-cosHalfB+cosHalfC)*sinHalfB)/cosHalfB-((cosHalfA+cosHalfB-cosHalfC)*sinHalfC)/cosHalfC;NAGEL POINT OF EXCENTRAL TRIANGLE
 X168;-(a/(1-sinHalfA))+b/(1-sinHalfB)+c/(1-sinHalfC)|a/(1-sinHalfA)-b/(1-sinHalfB)+c/(1-sinHalfC)|a/(1-sinHalfA)+b/(1-sinHalfB)-c/(1-sinHalfC);MITTENPUNKT OF EXCENTRAL TRIANGLE
-X169;a3-a2*(b+c)-2*(b-c)*(b+c)+a*(b2+c2)|b3-b2*(a+c)-2*(-a+c)*(a+c)+b*(a2+c2)|-2*(a-b)*(a+b)+(a2+b2)*c-(a+b)*c2+c3;X85-CEVA CONJUGATE OF X1
+X169;a3-a2*(b+c)-(b-c)*(b-c)*(b+c)+a*(b2+c2)|b3-b2*(a+c)-(-a+c)*(-a+c)*(a+c)+b*(a2+c2)|-((a-b)*(a-b)*(a+b))+(a2+b2)*c-(a+b)*c2+c3;X85-CEVA CONJUGATE OF X1
 X170;-(tanHalfA/cosHalfA*cosHalfA)+tanHalfB/cosHalfB*cosHalfB+tanHalfC/cosHalfC*cosHalfC|tanHalfA/cosHalfA*cosHalfA-tanHalfB/cosHalfB*cosHalfB+tanHalfC/cosHalfC*cosHalfC|tanHalfA/cosHalfA*cosHalfA+tanHalfB/cosHalfB*cosHalfB-tanHalfC/cosHalfC*cosHalfC;X9-ALEPH CONJUGATE OF X9
 X171;a2+b*c|b2+a*c|a*b+c2;{X2,X31}-HARMONIC CONJUGATE OF X238
 X172;a3+a*b*c|b3+a*b*c|a*b*c+c3;TRILINEAR PRODUCT X6*X171
