@@ -94,7 +94,7 @@
 {"X(94)", "csc3A|csc3B|csc3C", "ISOGONAL CONJUGATE OF X(50)"}
 {"X(95)", "(b2*c2)/(cosB*cosC + sinB*sinC)|(a2*c2)/(cosA*cosC + sinA*sinC)|(a2*b2)/(cosA*cosB + sinA*sinB)", "CEVAPOINT OF CENTROID AND CIRCUMCENTER"}
 {"X(96)", "sec2A/(cosB*cosC + sinB*sinC)|sec2B/(cosA*cosC + sinA*sinC)|sec2C/(cosA*cosB + sinA*sinB)", "ISOGONAL CONJUGATE OF X(52)"}
-{"X(97)", "cotA*(cosB*cosC + sinB*sinC)|cotB/(cosA*cosC + sinA*sinC)|cotC/(cosA*cosB + sinA*sinB)", "ISOGONAL CONJUGATE OF X(53)"}
+{"X(97)", "cotA/(cosB*cosC + sinB*sinC)|cotB/(cosA*cosC + sinA*sinC)|cotC/(cosA*cosB + sinA*sinB)", "ISOGONAL CONJUGATE OF X(53)"}
 {"X(98)", "(b*c)/(-(a2*b2) + b4 - a2*c2 + c4)|(a*c)/(a4 - a2*b2 - b2*c2 + c4)|(a*b)/(a4 + b4 - a2*c2 - b2*c2)", "TARRY POINT"}
 {"X(99)", "(b*c)/(b2 - c2)|(a*c)/(-a2 + c2)|(a*b)/(a2 - b2)", "STEINER POINT"}
 {"X(100)", "1/(b - c)|1/(-a + c)|1/(a - b)", "ANTICOMPLEMENT OF FEUERBACH POINT"}
@@ -111,7 +111,7 @@
 {"X(111)", "a/(2*a2 - b2 - c2)|b/(-a2 + 2*b2 - c2)|c/(-a2 - b2 + 2*c2)", "PARRY POINT"}
 {"X(112)", "a/((b2 - c2)*(-a2 + b2 + c2))|b/((-a2 + c2)*(a2 - b2 + c2))|c/((a2 - b2)*(a2 + b2 - c2))", "Ψ(ORTHOCENTER,SYMMEDIAN POINT)"}
 {"X(113)", "sinB*sinC*(sinB/(cosB - 2*cosA*cosC) + sinC/(-2*cosA*cosB + cosC))|sinA*sinC*(sinA/(cosA - 2*cosB*cosC) + sinC/(-2*cosA*cosB + cosC))|sinA*sinB*(sinA/(cosA - 2*cosB*cosC) + sinB/(cosB - 2*cosA*cosC))", "JERABEK ANTIPODE"}
-{"X(114)", "((-(a2*b2) + b4 - a2*c2 + c4)*(2*a4 - a2*b2 + b4 - a2*c2 - 4*b*c2 + c4))/a|((a4 - a2*b2 - b2*c2 + c4)*(a4 - a2*b2 + 2*b4 - 4*a2*c - b2*c2 + c4))/b|((a4 + b4 - a2*c2 - b2*c2)*(a4 - 4*a*b2 + b4 - a2*c2 - b2*c2 + 2*c4))/c", "KIEPERT ANTIPODE"}
+{"X(114)", "((-(a2*b2) + b4 - a2*c2 + c4)*(2*a4 - a2*b2 + b4 - a2*c2 - 2*b2*c2 + c4))/a|((a4 - a2*b2 - b2*c2 + c4)*(a4 - a2*b2 + 2*b4 - 2*a2*c2 - b2*c2 + c4))/b|((a4 + b4 - a2*c2 - b2*c2)*(a4 - 2*a2*b2 + b4 - a2*c2 - b2*c2 + 2*c4))/c", "KIEPERT ANTIPODE"}
 {"X(115)", "b*c*Power(b2 - c2,2)|a*c*Power(-a2 + c2,2)|a*b*Power(a2 - b2,2)", "CENTER OF KIEPERT HYPERBOLA"}
 {"X(116)", "b*Power(b - c,2)*c*(-(a*b) + b2 - a*c + b*c + c2)|a*c*Power(-a + c,2)*(a2 - a*b + a*c - b*c + c2)|a*Power(a - b,2)*b*(a2 + a*b + b2 - a*c - b*c)", "MIDPOINT OF X(4) AND X(103)"}
 {"X(117)", "(b2*c)/(a*(-secA + secB) + c*(secB - secC)) + (b*c2)/(a*(-secA + secC) + b*(-secB + secC))|(a2*c)/(b*(secA - secB) + c*(secA - secC)) + (a*c2)/(a*(-secA + secC) + b*(-secB + secC))|(a2*b)/(b*(secA - secB) + c*(secA - secC)) + (a*b2)/(a*(-secA + secB) + c*(secB - secC))", "MIDPOINT OF X(4) AND X(109)"}
@@ -166,7 +166,7 @@
 {"X(166)", "tanHalfA/(-cosHalfA + cosHalfB + cosHalfC) - tanHalfB/(cosHalfA - cosHalfB + cosHalfC) - tanHalfC/(cosHalfA + cosHalfB - cosHalfC)|-(tanHalfA/(-cosHalfA + cosHalfB + cosHalfC)) + tanHalfB/(cosHalfA - cosHalfB + cosHalfC) - tanHalfC/(cosHalfA + cosHalfB - cosHalfC)|-(tanHalfA/(-cosHalfA + cosHalfB + cosHalfC)) - tanHalfB/(cosHalfA - cosHalfB + cosHalfC) + tanHalfC/(cosHalfA + cosHalfB - cosHalfC)", "GERGONNE POINT OF EXCENTRAL TRIANGLE"}
 {"X(167)", "-(((-cosHalfA + cosHalfB + cosHalfC)*sinHalfA)/cosHalfA) + ((cosHalfA - cosHalfB + cosHalfC)*sinHalfB)/cosHalfB + ((cosHalfA + cosHalfB - cosHalfC)*sinHalfC)/cosHalfC|((-cosHalfA + cosHalfB + cosHalfC)*sinHalfA)/cosHalfA - ((cosHalfA - cosHalfB + cosHalfC)*sinHalfB)/cosHalfB + ((cosHalfA + cosHalfB - cosHalfC)*sinHalfC)/cosHalfC|((-cosHalfA + cosHalfB + cosHalfC)*sinHalfA)/cosHalfA + ((cosHalfA - cosHalfB + cosHalfC)*sinHalfB)/cosHalfB - ((cosHalfA + cosHalfB - cosHalfC)*sinHalfC)/cosHalfC", "NAGEL POINT OF EXCENTRAL TRIANGLE"}
 {"X(168)", "-(a/(1 - sinHalfA)) + b/(1 - sinHalfB) + c/(1 - sinHalfC)|a/(1 - sinHalfA) - b/(1 - sinHalfB) + c/(1 - sinHalfC)|a/(1 - sinHalfA) + b/(1 - sinHalfB) - c/(1 - sinHalfC)", "MITTENPUNKT OF EXCENTRAL TRIANGLE"}
-{"X(169)", "a3 - a2*(b + c) - 2*(b - c)*(b + c) + a*(b2 + c2)|b3 - b2*(a + c) - 2*(-a + c)*(a + c) + b*(a2 + c2)|-2*(a - b)*(a + b) + (a2 + b2)*c - (a + b)*c2 + c3", "X(85)-CEVA CONJUGATE OF X(1)"}
+{"X(169)", "a3 - a2*(b + c) - Power(b - c,2)*(b + c) + a*(b2 + c2)|b3 - b2*(a + c) - Power(-a + c,2)*(a + c) + b*(a2 + c2)|-(Power(a - b,2)*(a + b)) + (a2 + b2)*c - (a + b)*c2 + c3", "X(85)-CEVA CONJUGATE OF X(1)"}
 {"X(170)", "-(tanHalfA/Power(cosHalfA,2)) + tanHalfB/Power(cosHalfB,2) + tanHalfC/Power(cosHalfC,2)|tanHalfA/Power(cosHalfA,2) - tanHalfB/Power(cosHalfB,2) + tanHalfC/Power(cosHalfC,2)|tanHalfA/Power(cosHalfA,2) + tanHalfB/Power(cosHalfB,2) - tanHalfC/Power(cosHalfC,2)", "X(9)-ALEPH CONJUGATE OF X(9)"}
 {"X(171)", "a2 + b*c|b2 + a*c|a*b + c2", "{X(2),X(31)}-HARMONIC CONJUGATE OF X(238)"}
 {"X(172)", "a3 + a*b*c|b3 + a*b*c|a*b*c + c3", "TRILINEAR PRODUCT X(6)*X(171)"}
