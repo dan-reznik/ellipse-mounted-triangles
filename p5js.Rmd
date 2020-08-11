@@ -20,6 +20,7 @@ Read csv formulas
 df_formulas <- read_csv2("data/x0001_0200 formulas.csv",col_types = "ccc")
 df_formulas %>% filter(kimberling == "X(134)")
 ```
+
 ```{r}
 vars_db <- read_delim("data/vars_db.txt", delim = fixed("="), col_names = F)
 vars_dict <- new.env()

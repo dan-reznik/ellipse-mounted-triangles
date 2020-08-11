@@ -42,6 +42,8 @@ function lawOfCosines(a, b, c) { return (b*b+c*c-a*a)/(2.0*b*c); }
 
 function getSin(theCos) { return sqrt(1.0 - theCos*theCos); }
 
+function sinDoubleAngle(sinAngle,cosAngle) { return 2*sinAngle*cosAngle; }
+
 function cosDoubleAngle(cosAngle) { return 2*cosAngle*cosAngle - 1.0; }
 function cosHalfAngle(cosAngle) { return sqrt((1.0+cosAngle)/2); }
 function sinHalfAngle(cosAngle) { return sqrt((1.0-cosAngle)/2); }
