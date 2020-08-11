@@ -19,7 +19,7 @@
 { "X(119)", Hold@{cscA(cosB+cosC-1)(sin2B+sin2C+2(cosA-1)(sinB+sinC)),cscB(cosC+cosA-1)(sin2C+sin2A+2(cosB-1)(sinC+sinA)),cscC(cosA+cosB-1)(sin2A+sin2B+2(cosC-1)(sinA+sinB))},"X(119) = FEUERBACH ANTIPODE" },
 { "X(120)", Hold@{b c(2 a b c-(b+c)(a2+(b-c)^2))(b2+c2-a b-a c),c a(2 b c a-(c+a)(b2+(c-a)^2))(c2+a2-b c-b a),a b(2 c a b-(a+b)(c2+(a-b)^2))(a2+b2-c a-c b)},"X(105)-OF-MEDIAL-TRIANGLE" },
 { "X(121)", Hold@{b c(b+c-2 a)(b3+c3+a(b2+c2)-2 b c(b+c)),c a(c+a-2 b)(c3+a3+b(c2+a2)-2 c a(c+a)),a b(a+b-2 c)(a3+b3+c(a2+b2)-2 a b(a+b))},"X(106)-OF-MEDIAL-TRIANGLE" },
-{ "X(122)", Hold@{(b2-c2)^2 (cosA-cosB cosC)/tan2A,(c2-a2)^2 (cosB-cosC cosA)/tan2B,(a2-b2)^2 (cosC-cosA cosB)/tan2C},"X(107)-OF-MEDIAL-TRIANGLE" },
+{ "X(122)", Hold@{(b2-c2)^2 (cosA-cosB cosC)/(tanA*tanA),(c2-a2)^2 (cosB-cosC cosA)/(tanB*tanB),(a2-b2)^2 (cosC-cosA cosB)/(tanC*tanC)},"X(107)-OF-MEDIAL-TRIANGLE" },
 { "X(123)", Hold@{ cscA(secB-secC)(secA(sin2B-sin2C)+sinC tanC-sinB tanB), cscB(secC-secA)(secB(sin2C-sin2A)+sinA tanA-sinC tanC), cscC(secA-secB)(secC(sin2A-sin2B)+sinB tanB-sinA tanA)},"X(108)-OF-MEDIAL-TRIANGLE" },
 { "X(124)", Hold@{b c(b+c-a)(b-c)^2 ((b+c)(b2+c2-a2-b c)+a b c),c a(c+a-b)(c-a)^2 ((c+a)(c2+a2-b2-c a)+b c a),a b(a+b-c)(a-b)^2 ((a+b)(a2+b2-c2-a b)+c a b)},"X(109)-OF-MEDIAL-TRIANGLE" },
 { "X(125)", Hold@{b c(b2+c2-a2)(b2-c2)^2,c a(c2+a2-b2)(c2-a2)^2,a b(a2+b2-c2)(a2-b2)^2},"CENTER OF JERABEK HYPERBOLA" },
