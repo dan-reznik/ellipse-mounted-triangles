@@ -18,7 +18,7 @@ prepare_formulas("data/x0001_0200 cform v2b.txt",
 Read csv formulas
 ```{r}
 df_formulas <- read_csv2("data/x0001_0200 formulas.csv",col_types = "ccc")
-df_formulas %>% filter(kimberling == "X(134)")
+df_formulas %>% filter(kimberling == "X122")
 ```
 
 ```{r}
@@ -48,7 +48,7 @@ df_formulas_vars <- df_formulas %>%
 
 Teste das funcoes js criadas
 ```{r}
-xn = 134
+xn = 122
 create_function_js(xn,df_formulas_vars$trilins[xn],
       df_formulas_vars$vars[[xn]]) %>% 
   cat
