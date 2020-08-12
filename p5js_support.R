@@ -61,13 +61,13 @@ process_trilins <- function(trilins){
 }
 strip_first_last <- function(s) s%>%str_sub(start=2)%>%str_sub(end=-2)
 
-add_dependence_vars <- function(vars, vars_all){
+add_dependence_vars <- function(vars, vars_all,vars_dict_dependence){
   if(length(vars)>0){
     for(var in vars){
       dependencies <- vars_dict_dependence[[var]]#get(var, env=vars_dict_dependence)
       if(length(dependencies)>0){
         vars_all <- vars_all %>% append(dependencies)
-        vars_all <- add_dependence_vars(dependencies, vars_all)
+        vars_all <- add_dependence_vars(dependencies, vars_all,vars_dict_dependence)
       }
     }
   }
@@ -82,12 +82,12 @@ add_dependence_vars <- function(vars, vars_all){
 #    secC*(-(S*sec2C)+sumT2)*(-((sec2A+sec2B)*sumS2)+2*sumT2)
 #         ]
 # vars:  c("secA","S","sec2A","sumT2","sec2B","sec2C","sumS2","secB","secC") 
-create_function_js <- function(n,trilins,vars) {
+create_function_js <- function(n,trilins,vars,vars_dict,vars_dict_dependence) {
   #n <- 1### TESTES
   #vars <- df_formulas_vars$vars[[n]]### TESTES
   #trilins <- df_formulas_vars$trilins[n]### TESTES
   s3 <- str_split(trilins,fixed("|"))
-  vars_with_dependence_vars <- add_dependence_vars(vars, vars)
+  vars_with_dependence_vars <- add_dependence_vars(vars, vars,vars_dict_dependence)
   if(length(vars_with_dependence_vars)>0){
     vars_with_dependence_vars_unique_invert <- vars_with_dependence_vars %>%
       rev() %>%
@@ -115,11 +115,11 @@ create_function_js <- function(n,trilins,vars) {
     .sep="\n"))
 }
 
-create_js_code <- function(df_formulas_vars){
+create_js_code <- function(df_formulas_vars,vars_dict,vars_dict_dependence){
   df_formulas_vars %>%
     mutate(index = row_number(),
            js = pmap_chr(list(index, trilins, vars), 
-                     create_function_js)) %>%
+                     ~create_function_js(..1,..2,..3,vars_dict,vars_dict_dependence))) %>%
     pull(js) %>%
     str_c(collapse = "\n\n")
 }
