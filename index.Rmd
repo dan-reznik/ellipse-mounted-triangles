@@ -1,5 +1,5 @@
 --- 
-title: "9600 Loci of Ellipse-Mounted Triangles "
+title: "Loci of Ellipse-Mounted Triangle Centers"
 author: Dan Reznik and Iverton Darlan
 date: July, 2020
 output:
@@ -44,15 +44,21 @@ source("util.R")
 g_url <- "https://dan-reznik.github.io/ellipse-mounted-triangles"
 ```
 
-# Intro
+Some information on our [locus app](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/) under construction. The figure below can be observed by clickling [here](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/?sc=5.587&a=1.592&lc2=trilins&lc3=trilins&Xn1=135&Xn2=135&Xn3=135&tr1=orthic&tr2=orthic&tr3=orthic&dr1=false&mt1=fs&mt2=major&mt3=minor).
 
-This exploration is inspired by Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal. On that site an intriguing construction is given for the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) [@odehnal2015-conics] based on the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ sliding along the circle centered at $V_1$ and of radius $r=|V_2-V_1|$:
+```{r,out.width="80%"}
+knitr::include_graphics("pics/X135 loci.png")
+```
+
+# How does it work?
+
+Drawing triangle center loci was inspired by Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal. On that site an intriguing construction is given for the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) [@odehnal2015-conics] based on the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ sliding along the circle centered at $V_1$ and of radius $r=|V_2-V_1|$:
 
 ```{r,out.width="30%"}
 knitr::include_graphics("pics/single_vtx_strophoid.svg")
 ```
 
-Here we study a related system: let $V_1,V_2$ still be two fixed vertices of a triangle, but with a third one $P(t)$ sliding along an *ellipse* $\mathcal{E}$ with semi-axes $a,b$. What are loci of Triangle Centers $X_k$ [@etc] for different "mountings" of $V_1,V_2$ on $\mathcal{E}$?
+Here we consider a slightly more general families of triangles: let $V_1,V_2$ be two vertices of a triangle which are stationary with respect to an *ellipse* $\mathcal{E}$. Let a third vertex $P(t)$ slide along the boundary of $\mathcal{E}$. We can now trace out the loci of triangle centers $X_k$ [@etc] for different arrangements of $V_1,V_2$ on $\mathcal{E}$.
 
 As an example, consider the locus (purple) of the Barycenter $X_2$ when $V_1,V_2$ are the right and top vertices of $\mathcal{E}$: 
 
@@ -62,7 +68,11 @@ knitr::include_graphics("pics/single_vtx_example.svg")
 
 Indeed, it can be shown that for whichever $V_1,V_2$, the locus of $X_2$ is, up to translation, a fixed ellipse $(a/3,b/3)$,
 
-Consider the following 16 possibilities for the fixed vertices:
+Currently Kimberling centers $X_1$ to $X_{200}$ are available, though we will be soon expanding to $X_{1000}$.
+
+## Mountings
+
+In the app we provide several triangle families with which to trace out loci, including those stemming from *Poncelet* ellipse pairs (elliptic billiard, homothetic, and circular caustic). Additionally, the following 16 mountings for the fixed vertices are selectable:
 
 1. *major*: left and right ellipse vertices (EVs)
 1. *minor*: top and bottom EVs
@@ -74,18 +84,61 @@ Consider the following 16 possibilities for the fixed vertices:
 1. *fsLeft*: left EV and $F_2$
 1. *fsRight*: right EV and $F_2$
 1. *fsTop*: top EV and $F_2$
-1. *cornerTL_BL*: top left corner of ellipse bounding box (TL) and bottom left of the same (BL)
-1. *cornerTL_TR*: TL and top right corner (TR) of ellipse bounding box
-1. *cornerTL_vtxL*: TL and left EV
-1. *cornerTL_vtxT*: TL and top EV
-1. *cornerTL_vtxB*: TL and bottom EV
-1. *cornerTL_ctr*: TL and center of ellipse
+1. *TL_BL*: top left corner of ellipse bounding box (TL) and bottom left of the same (BL)
+1. *TL_TR*: TL and top right corner (TR) of ellipse bounding box
+1. *TL_vtxL*: TL and left EV
+1. *TL_vtxT*: TL and top EV
+1. *TL_vtxB*: TL and bottom EV
+1. *TL_ctr*: TL and center of ellipse
 
-Under the above choices, the locus of $X_{11}$ (purple) sweeps out intriguing curves:
+For example, below is the locus of $X_{11}$ (purple) under the above mountings:
 
 ```{r,out.width="90%",background="white"}
 knitr::include_graphics("pics/single_vtx_intro.svg")
 ```
+
+## Derived Triangles
+
+To increase the "drawing" powers of our app, center loci can also be traced out with respect to triangles **derived** from the reference one. The following can be selected (see [@mw] for their definition):
+
+1. Anticomplementary
+1. BCI
+1. 1st Brocard
+1. 2nd Brocard
+1. 3rd Brocard
+1. 4th Brocard
+1. Circum-Medial
+1. Circum-Mid-arc
+1. Circum-Orthic
+1. Excentral
+1. Extouch
+1. Euler
+1. Extangents
+1. Feuerbach
+1. Fuhrmann
+1. Half-Altitude
+1. Incentral
+1. Inner Vecten
+1. Intangents
+1. Intouch
+1. Johnson
+1. Lemoine
+1. Lucas Central
+1. MacBeath
+1. Medial
+1. Mixtilinear
+1. 1st Morley
+1. 1st Neuberg
+1. 2nd Neuberg
+1. Orthic
+1. Outer Vecten
+1. Reflection
+1. Steiner
+1. Symmedial
+1. Tangential
+1. Tangential Mid-Arc
+1. Yff Central
+1. Yff Contact
 
 # Loci Carousels {.tabset .tabset-fade .tabset-pills}
 
@@ -193,13 +246,7 @@ slickR(
     asNavFor = ".slick-initialized")
 ```
 
-# Conclusion
-
-The following web-based wolfram apps demonstrating the above are available:
-
-- [1 mounting at a time](https://www.wolframcloud.com/objects/user-abf31092-d7c1-4e49-8701-dc65d547b021/locus%20vertex%20ellipse%20single%20v1).
-- [16 simultaneous mountings](https://www.wolframcloud.com/objects/user-abf31092-d7c1-4e49-8701-dc65d547b021/locus%20vertex%20ellipse%20v1)
-- Under construction: [p5.js interactive app](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/)
+# Contact
 
 Any comments, ideas, corrections, suggestions, and proofs contributed are very welcome. Email me at: `dreznik _theat_ gmail _thedot_ com`.
 
