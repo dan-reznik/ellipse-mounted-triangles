@@ -91,7 +91,7 @@ The following 16 mountings for $V_1$ and $V_2$ are supported:
 1. *TL_vtxB*: TL and bottom EV
 1. *TL_ctr*: TL and center of ellipse
 
-For example, below is the locus of $X_{11}$ (purple) under the above mountings:
+For example, below are loci of $X_{11}$ (purple) for each of the above mountings:
 
 ```{r,out.width="90%",background="white"}
 knitr::include_graphics("pics/single_vtx_intro.svg")
@@ -117,6 +117,9 @@ knitr::include_graphics("pics/0100_all_3.svg")
 
 To increase the "drawing" powers of our app, center loci can also be traced out with respect to triangles **derived** from the reference one. The following can be selected (see [@mw] for their definition):
 
+<div class = "row">
+<div class = "col-md-3">
+1. Reference
 1. Anticomplementary
 1. BCI
 1. 1st Brocard
@@ -129,7 +132,9 @@ To increase the "drawing" powers of our app, center loci can also be traced out 
 1. Excentral
 1. Extouch
 1. Euler
-1. Extangents
+</div>
+<div class = "col-md-3">
+14. Extangents
 1. Feuerbach
 1. Fuhrmann
 1. Half-Altitude
@@ -142,7 +147,9 @@ To increase the "drawing" powers of our app, center loci can also be traced out 
 1. Lucas Central
 1. MacBeath
 1. Medial
-1. Mixtilinear
+</div>
+<div class = "col-md-3">
+27. Mixtilinear
 1. 1st Morley
 1. 1st Neuberg
 1. 2nd Neuberg
@@ -155,6 +162,8 @@ To increase the "drawing" powers of our app, center loci can also be traced out 
 1. Tangential Mid-Arc
 1. Yff Central
 1. Yff Contact
+</div>
+</div>
 
 # Loci Carousels {.tabset .tabset-fade .tabset-pills}
 
