@@ -52,7 +52,7 @@ knitr::include_graphics("pics/X135 loci.png")
 
 # How does it work?
 
-We were inspired by an intriguing constructionappearing on Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal: the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) [@odehnal2015-conics] can be drawn as the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ which is slid along the circle centered on $V_1$ and of radius $r=|V_2-V_1|$:
+An intriguing construction for the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) [@odehnal2015-conics] appears on Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal: it is the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ which is slid along the circle centered on $V_1$ and of radius $r=|V_2-V_1|$:
 
 ```{r,out.width="30%"}
 knitr::include_graphics("pics/single_vtx_strophoid.svg")
