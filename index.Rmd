@@ -274,6 +274,28 @@ slickR(
     asNavFor = ".slick-initialized")
 ```
 
+# Demo: Hexyl Loci
+
+```{r}
+g_fnames <- as.character(dir_ls("pics_dark")) %>% str_c(g_url,"/",.)
+
+slickR(
+    g_fnames[1:(length(g_fnames)-1)],
+    slideId = "slider_hexyl",
+    height=400,
+    #width = 800,
+    width='95%',
+    slideType = 'img-lazy') + 
+  slickR::settings(
+    fade=T,
+    #adaptiveHeight=T,
+    lazyLoad = 'ondemand',
+    speed=20,
+    asNavFor = ".slick-initialized")
+```
+
+
+
 # Contact
 
 Any comments, ideas, corrections, suggestions, and proofs contributed are very welcome. Email me at: `dreznik _theat_ gmail _thedot_ com`.
