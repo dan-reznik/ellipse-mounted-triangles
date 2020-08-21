@@ -66,9 +66,9 @@ As an example, consider the locus (purple) of the Barycenter $X_2$ when $V_1,V_2
 knitr::include_graphics("pics/single_vtx_example.svg")
 ```
 
-Indeed, it can be shown that for whichever $V_1,V_2$, the locus of $X_2$ is, up to translation, a fixed ellipse $(a/3,b/3)$,
+Indeed, for whichever fixed $V_1,V_2$ anywhere on the plane, the locus of $X_2$ is, up to translation, a fixed ellipse $(a/3,b/3)$,
 
-Currently our tool covers Kimberling centers $X_1$ to $X_{200}$ are available, though we will be will support centers all the way up to $X_{1000}$.
+Currently our tool can draw loci for Kimberling centers $X_1$ to $X_{200}$, though we will soon support centers all the way up to $X_{1000}$.
 
 ## Mountings
 
