@@ -99,13 +99,19 @@ knitr::include_graphics("pics/single_vtx_intro.svg")
 
 ## Poncelet families
 
-We also implement 1d triangle families produced by a pair of ellipses and their 3-periodic Poncelet family, namely:
+Also available are 1d triangle families corresponding to 3-periodic orbits inscribed/circumscribed to special pairs of ellipses, namely:
 
 1. *billard*: the inner ellipse is confocal to the outer $(a,b)$;
 1. *incircle*: outer ellipse $(a,b)$ and inner circle with $r=(ab)/(a+b)$;
 1. *inellipse*: an inner ellipse $(a,b)$ and outer circle with $R=a+b$;
 1. *homothetic*: outer ellipse $(a,b)$ and inner ellipse has axes $(a/2,b/2)$
 1. *dual*: outer ellipse $(a,b)$ and inner ellipse $(a',b')$ where $b'=(a^2 b)/(a^2+b^2)$ and $a'={b'}(b/a)$.
+
+These are illustrated below:
+
+```{r,out.width="90%",background="white"}
+knitr::include_graphics("pics/0100_all_3.svg")
+```
 
 ## Derived Triangles
 
