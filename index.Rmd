@@ -276,6 +276,8 @@ slickR(
 
 # Demo: Hexyl Loci
 
+Shown below are a few sample triangle center loci of the Hexyl triangle over different mountings.
+
 ```{r}
 g_fnames <- as.character(dir_ls("pics_dark")) %>% str_c(g_url,"/",.)
 
@@ -290,8 +292,9 @@ slickR(
     fade=T,
     #adaptiveHeight=T,
     lazyLoad = 'ondemand',
-    speed=20,
-    asNavFor = ".slick-initialized")
+    speed=20
+    #,asNavFor = ".slick-initialized"
+    )
 ```
 
 
