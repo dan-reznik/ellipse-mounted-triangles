@@ -115,7 +115,7 @@ knitr::include_graphics("pics/0100_all_3.svg")
 
 ## Derived Triangles
 
-To increase the drawing powers of our app, center loci can be computed with respect to both the reference and 39 **derived** ones. The following is a list of possible choices (see [@mw] for their definition):
+To increase the drawing powers of our app, loci can be computed with respect to centers of either the reference or four-dozen **derived** triangles, listed below (see [@mw] for their definition):
 
 <div class = "row">
 <div class = "col-md-3">
@@ -129,11 +129,11 @@ To increase the drawing powers of our app, center loci can be computed with resp
 1. Circum-Medial
 1. Circum-Mid-arc
 1. Circum-Orthic
+1. Excentral
+1. Extouch
 </div>
 <div class = "col-md-3">
-11. Excentral
-1. Extouch
-1. Euler
+13. Euler
 1. Extangents
 1. Feuerbach
 1. Fuhrmann
@@ -141,23 +141,27 @@ To increase the drawing powers of our app, center loci can be computed with resp
 1. Hexyl
 1. Incentral
 1. Inner Vecten
-</div>
-<div class = "col-md-3">
-21. Intangents
+1. Intangents
 1. Intouch
 1. Johnson
 1. Lemoine
-1. Lucas Central
+</div>
+<div class = "col-md-3">
+25. Lucas Central
+1. Lucas Inner
+1. Lucas Tangents
 1. MacBeath
 1. Medial
 1. Mixtilinear
-1. 1st Morley
+1. 1st Morley Adj
+1. 2nd Morley Adj
+1. 3rd Morley Adj
 1. 1st Neuberg
+1. 2nd Neuberg
+1. Orthic
 </div>
 <div class = "col-md-3">
-31. 2nd Neuberg
-1. Orthic
-1. Outer Vecten
+37. Outer Vecten
 1. Reflection
 1. Steiner
 1. Symmedial
