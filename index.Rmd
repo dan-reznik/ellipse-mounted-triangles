@@ -44,7 +44,7 @@ source("util.R")
 g_url <- "https://dan-reznik.github.io/ellipse-mounted-triangles"
 ```
 
-Some information on our [locus app](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/) under construction. The figure below can be observed by clickling [here](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/?sc=5.587&a=1.592&lc2=trilins&lc3=trilins&Xn1=135&Xn2=135&Xn3=135&tr1=orthic&tr2=orthic&tr3=orthic&dr1=false&mt1=fs&mt2=major&mt3=minor).
+This page contains information about our [locus app](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/) under construction. The figure below can be observed by clickling [here](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/?sc=5.587&a=1.592&lc2=trilins&lc3=trilins&Xn1=135&Xn2=135&Xn3=135&tr1=orthic&tr2=orthic&tr3=orthic&dr1=false&mt1=fs&mt2=major&mt3=minor).
 
 ```{r,out.width="80%"}
 knitr::include_graphics("pics/X135 loci.png")
@@ -66,7 +66,7 @@ As an example, consider the locus (purple) of the Barycenter $X_2$ when $V_1,V_2
 knitr::include_graphics("pics/single_vtx_example.svg")
 ```
 
-Indeed, for whichever fixed $V_1,V_2$ anywhere on the plane, the locus of $X_2$ is, up to translation, a fixed ellipse $(a/3,b/3)$,
+Amazingly, for $V_1,V_2$ fixed anywhere (not necessarily on the boundary of $\mathcal{E}$), the locus of $X_2$ is, up to translation, an ellipse with axes $a/3$ and $b/3$.
 
 Currently our tool can draw loci for Kimberling centers $X_1$ to $X_{200}$, though we will soon support centers all the way up to $X_{1000}$.
 
