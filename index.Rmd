@@ -52,13 +52,13 @@ knitr::include_graphics("pics/X135 loci.png")
 
 # How does it work?
 
-This work was inspired by Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal. On that site an intriguing construction is given for the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) [@odehnal2015-conics] based on the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ sliding along the circle centered at $V_1$ and of radius $r=|V_2-V_1|$:
+We were inspired by an intriguing constructionappearing on Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal: the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) [@odehnal2015-conics] can be drawn as the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ which is slid along the circle centered on $V_1$ and of radius $r=|V_2-V_1|$:
 
 ```{r,out.width="30%"}
 knitr::include_graphics("pics/single_vtx_strophoid.svg")
 ```
 
-Here we consider a slight generalization: let $V_1,V_2$ be stationary with respect to an *ellipse* $\mathcal{E}$. Let a third vertex $P(t)$ slide along the boundary of $\mathcal{E}$. We can now trace out the loci of triangle centers $X_k$ [@etc] for different arrangements of $V_1,V_2$ on $\mathcal{E}$.
+Here we consider a slight generalization: let $V_1,V_2$ be stationary with respect to an *ellipse* $\mathcal{E}$ with axes $a$ and $b$. Let a third vertex $P(t)$ slide along the boundary of $\mathcal{E}$. We can now trace out the loci of triangle centers such as the Incenter $X_1$, Barycenter $X_2$, Circumcenter $X_3$, etc., for different arrangements of $V_1,V_2$ on $\mathcal{E}$. The $X_k$ notation follows Clark Kimberling's Encyclopedia of Triangle Centers [@etc].
 
 As an example, consider the locus (purple) of the Barycenter $X_2$ when $V_1,V_2$ are the right and top vertices of $\mathcal{E}$: 
 
@@ -68,7 +68,7 @@ knitr::include_graphics("pics/single_vtx_example.svg")
 
 Indeed, it can be shown that for whichever $V_1,V_2$, the locus of $X_2$ is, up to translation, a fixed ellipse $(a/3,b/3)$,
 
-Currently our tool supports Kimberling centers $X_1$ to $X_{200}$ are available, though we will be will support centers all the way up to $X_{1000}$.
+Currently our tool covers Kimberling centers $X_1$ to $X_{200}$ are available, though we will be will support centers all the way up to $X_{1000}$.
 
 ## Mountings
 
