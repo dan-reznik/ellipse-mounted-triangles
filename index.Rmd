@@ -68,7 +68,7 @@ knitr::include_graphics("pics/single_vtx_example.svg")
 
 Amazingly, for $V_1,V_2$ fixed anywhere (not necessarily on the boundary of $\mathcal{E}$), the locus of $X_2$ is, up to translation, an ellipse with axes $a/3$ and $b/3$.
 
-Currently our tool can draw loci for Kimberling centers $X_1$ to $X_{200}$, though we will soon support centers all the way up to $X_{1000}$.
+Courtesy of Peter Moses, the app can draw loci for the first 1000 Kimberling centers.
 
 ## Mountings
 
@@ -106,6 +106,7 @@ Also available are 1d triangle families corresponding to 3-periodic orbits inscr
 1. *inellipse*: an inner ellipse $(a,b)$ and outer circle with $R=a+b$;
 1. *homothetic*: outer ellipse $(a,b)$ and inner ellipse has axes $(a/2,b/2)$
 1. *dual*: outer ellipse $(a,b)$ and inner ellipse $(a',b')$ where $b'=(a^2 b)/(a^2+b^2)$ and $a'={b'}(b/a)$.
+1. *poristic*: the family discovered by William Chapple (1718-1781) in 1746 with fixed incircle (inradius $r$) and circumcircle (circumradius $R$), with $d=|{X_1}{X_3}|=\sqrt{R(R-2r)}$.
 
 These are illustrated below:
 
@@ -301,7 +302,9 @@ slickR(
     )
 ```
 
+# Acknowledgements
 
+This work would be impossible without the publications, generosity, and help of Clark Kimberling, Peter Moses, Mark Helman, Arsenyi Akopyan, Robert Ferréol, and Eric Weisstein.
 
 # Contact
 
