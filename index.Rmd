@@ -58,7 +58,7 @@ An intriguing construction for the [Right Strophoid Curve]([https://mathcurve.co
 knitr::include_graphics("pics/single_vtx_strophoid.svg")
 ```
 
-Here we consider a slight generalization: let $V_1,V_2$ be stationary with respect to an *ellipse* $\mathcal{E}$ with axes $a$ and $b$. Let a third vertex $P(t)$ slide along the boundary of $\mathcal{E}$. We can now trace out the loci of triangle centers such as the Incenter $X_1$, Barycenter $X_2$, Circumcenter $X_3$, etc., for different arrangements of $V_1,V_2$ on $\mathcal{E}$. The $X_k$ notation follows Clark Kimberling's Encyclopedia of Triangle Centers [@etc].
+Here we consider a slight generalization: let $V_1,V_2$ be stationary with respect to an *ellipse* $\mathcal{E}$ with axes $a$ and $b$. Let a third vertex $P(t)$ slide along the boundary of $\mathcal{E}$. We can now trace out the loci of triangle centers such as the Incenter $X_1$, Barycenter $X_2$, Circumcenter $X_3$, etc., for different *mountings* of $V_1,V_2$ on $\mathcal{E}$. The $X_k$ notation follows Clark Kimberling's Encyclopedia of Triangle Centers [@etc].
 
 As an example, consider the locus (purple) of the Barycenter $X_2$ when $V_1,V_2$ are the right and top vertices of $\mathcal{E}$: 
 
