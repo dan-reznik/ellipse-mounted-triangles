@@ -66,7 +66,7 @@ As an example, consider the locus (purple) of the Barycenter $X_2$ when $V_1,V_2
 knitr::include_graphics("pics/single_vtx_example.svg")
 ```
 
-Amazingly, for $V_1,V_2$ fixed anywhere (not necessarily on the boundary of $\mathcal{E}$), the locus of $X_2$ is, up to translation, an ellipse with axes $a/3$ and $b/3$.
+Amazingly, for $V_1,V_2$ fixed anywhere (not necessarily on the boundary of $\mathcal{E}$), the locus of $X_2$ is, up to translation, an ellipse with axes $a/3$ and $b/3$ [@akopyan2007].
 
 Courtesy of Peter Moses, the app can draw loci for the first 1000 Kimberling centers.
 
@@ -107,8 +107,9 @@ Also available are 1d triangle families corresponding to 3-periodic orbits inscr
 1. *homothetic*: outer ellipse $(a,b)$ and inner ellipse has axes $(a/2,b/2)$
 1. *dual*: outer ellipse $(a,b)$ and inner ellipse $(a',b')$ where $b'=(a^2 b)/(a^2+b^2)$ and $a'={b'}(b/a)$.
 1. *poristic*: the family discovered by William Chapple (1718-1781) in 1746 with fixed incircle (inradius $r$) and circumcircle (circumradius $R$), with $d=|{X_1}{X_3}|=\sqrt{R(R-2r)}$.
+1. *brocard*: fixed circumcircle and inner Brocard inellipse [@mw], Brocard points are stationary and Brocard angle is invariant!
 
-These are illustrated below:
+Except for the last, the above Poncelet families are illustrated below:
 
 ```{r,out.width="90%",background="white"}
 knitr::include_graphics("pics/0100_all_3.svg")
@@ -127,14 +128,16 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 1. 2nd Brocard
 1. 3rd Brocard
 1. 4th Brocard
+1. 5th Brocard
+1. 6th Brocard
+1. 7th Brocard [our invention!]
 1. Circum-Medial
 1. Circum-Mid-arc
-1. Circum-Orthic
-1. Excentral
-1. Extouch
 </div>
 <div class = "col-md-3">
-13. Euler
+13. Circum-Orthic
+1. Excentral
+1. Extouch
 1. Extangents
 1. Feuerbach
 1. Fuhrmann
@@ -144,11 +147,11 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 1. Inner Vecten
 1. Intangents
 1. Intouch
-1. Johnson
-1. Lemoine
 </div>
 <div class = "col-md-3">
-25. Lucas Central
+25. Johnson
+1. Lemoine
+1. Lucas Central
 1. Lucas Inner
 1. Lucas Tangents
 1. MacBeath
@@ -158,11 +161,11 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 1. 2nd Morley Adj
 1. 3rd Morley Adj
 1. 1st Neuberg
-1. 2nd Neuberg
-1. Orthic
 </div>
 <div class = "col-md-3">
-37. Outer Vecten
+37. 2nd Neuberg
+1. Orthic
+1. Outer Vecten
 1. Reflection
 1. Steiner
 1. Symmedial
@@ -304,7 +307,7 @@ slickR(
 
 # Acknowledgements
 
-This work would be impossible without the publications, generosity, and help of Clark Kimberling, Peter Moses, Mark Helman, Arsenyi Akopyan, Robert Ferréol, and Eric Weisstein.
+This work would be impossible without the generous help and/or publications of Arsenyi Akopyan, Mark Helman, Robert Ferréol, Ronaldo Garcia, Clark Kimberling, Jair Koiller, Peter Moses, Hellmuth Stachel, Sergei Tabachnikov, and Eric Weisstein.
 
 # Contact
 
