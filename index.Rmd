@@ -44,7 +44,7 @@ source("util.R")
 g_url <- "https://dan-reznik.github.io/ellipse-mounted-triangles"
 ```
 
-This page contains information about our [locus app](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/) under construction. The figure below can be observed by clickling [here](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/?sc=5.587&a=1.592&lc2=trilins&lc3=trilins&Xn1=135&Xn2=135&Xn3=135&tr1=orthic&tr2=orthic&tr3=orthic&dr1=false&mt1=fs&mt2=major&mt3=minor).
+This page contains information about our [locus app](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/) under construction. This is an improvement upon a [earlier app](https://editor.p5js.org/dreznik/full/i1Lin7lt7). The figure below can be observed by clickling [here](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/?sc=5.587&a=1.592&lc2=trilins&lc3=trilins&Xn1=135&Xn2=135&Xn3=135&tr1=orthic&tr2=orthic&tr3=orthic&dr1=false&mt1=fs&mt2=major&mt3=minor).
 
 ```{r,out.width="80%"}
 knitr::include_graphics("pics/X135 loci.png")
@@ -122,6 +122,10 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 <div class = "row">
 <div class = "col-md-3">
 1. Reference
+1. *Cevian*
+1. *Anticevian*
+1. *Pedal*
+1. *Antipedal*
 1. Anticomplementary
 1. BCI
 1. 1st Brocard
@@ -131,11 +135,11 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 1. 5th Brocard
 1. 6th Brocard
 1. 7th Brocard [our invention!]
-1. Circum-Medial
-1. Circum-Mid-arc
 </div>
 <div class = "col-md-3">
-13. Circum-Orthic
+15. Circum-Medial
+1. Circum-Mid-arc
+1. Circum-Orthic
 1. Excentral
 1. Extouch
 1. Extangents
@@ -149,7 +153,7 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 1. Intouch
 </div>
 <div class = "col-md-3">
-25. Johnson
+29. Johnson
 1. Lemoine
 1. Lucas Central
 1. Lucas Inner
@@ -163,7 +167,7 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 1. 1st Neuberg
 </div>
 <div class = "col-md-3">
-37. 2nd Neuberg
+41. 2nd Neuberg
 1. Orthic
 1. Outer Vecten
 1. Reflection
@@ -175,6 +179,17 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 1. Yff Contact
 </div>
 </div>
+
+Note that the cevian, anticevian, pedal, and antipedal triangles are parametrized by an additional triangle center $X_k$.
+
+## Derived circles
+
+One is also able to superimpose a derived circle (see list below) on top of any triangle families drawn. Furthermore one can also *invert* any triangle center with respect to the selected circle.
+
+1. Circumcircle
+1. Incircle
+1. Brocard circle
+1. etc.
 
 # Loci Carousels {.tabset .tabset-fade .tabset-pills}
 
