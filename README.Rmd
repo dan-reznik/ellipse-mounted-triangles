@@ -1,7 +1,7 @@
 ---
 title: "Loci of Triangle Centers of Ellipse-Mounted Triangles"
 author: "Dan Reznik and Iverton Darlan"
-date: July, 2020
+date: July-December, 2020
 output: github_document
 ---
 

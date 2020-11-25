@@ -1,0 +1,29 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=latex 2020.10.6)  6 OCT 2020 16:09
+entering extended mode
+**makebst.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\.tex"
+! Interruption.
+<to be read again> 
+                   \begingroup 
+l.1 
+    %%
+? q
+OK, entering \batchmode...
+LaTeX2e <2017/01/01> patch level 1
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+ File ignored)
+! Emergency stop.
+<*> makebst.tex
+               
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 7 strings out of 493334
+ 195 string characters out of 3139220
+ 53252 words of memory out of 3000000
+ 3636 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 5i,0n,1p,92b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+No pages of output.
