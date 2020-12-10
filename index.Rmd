@@ -52,21 +52,31 @@ g_url <- "https://dan-reznik.github.io/ellipse-mounted-triangles"
 
 # Introduction
 
-The study of loci of triangle centers (and associated objects) over 1d triangle families is a vast, classic subject. A tiny sample of recent, important works include: [@dykstra2006-loci], [@odehnal2011-poristic], [@pamfilos2020-euler], [@sergei2016-com], but their are many many others.
+The four classic triangle centers are (i) the incenter $X_1$ (where bisectors meet), (ii) the barycenter $X_2$ (the average of the vertices), (iii) the circumcenter $X_3$ (center of the circumscribing circle), and (iv) the orthocenter $X_4$ (where altitudes meet) [@mw]. The $X_k$ notation follows Kimberling's monumental Encyclopedia of Triangle Centers [@etc], where thousands of triangle centers and their properties are catalogued.
 
-As a small contribution to this field, we have been constructing a web-based [locus app](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/) geared at visualization and experimentation with loci of triangle families. The figure below shows an example of what can be obtained. To see it live click [here](https://bit.ly/3h2wXZ1):
+One prolific question is: what is the *locus* of some triangle center over some 1d *family* of triangles? The simplest family is perhaps one where two vertices are fixed (say, on the $x$ axis) and a third one moves parallel to it. Shown below are the loci of $X_i$, $i=1,2,3,4,20$ over such a family (see also this [video](https://youtu.be/Y50RFjhvsAo)):
+
+```{r,out.width="60%"}
+knitr::include_graphics("pics/horiz P3.png")
+```
+
+One notices right away the loci of $X_1$, $X_2$, $X_4$, and $X_{20}$ meet on two specific points. Furthermore, the loci of $X_4$ and $X_{20}$ are parabolas! We leave these as an exercise.
+
+Loci phenomena are a historical subject of study. Recent works include  [@dykstra2006-loci], [@odehnal2011-poristic], [@pamfilos2020-euler], [@sergei2016-com], but there are many many others.
+
+Here we document some features of our evolving, interactive [locus visualization app](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/). The figure below shows an example of three simultaneous, intricate loci. To see it live click [here](https://bit.ly/3h2wXZ1):
 
 ```{r,out.width="80%"}
 knitr::include_graphics("pics/X135 loci.png")
 ```
 
-We got started after seeing this intriguing construction for the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) [@odehnal2015-conics], on Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal: such a curve is the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ which is slid along the circle centered on $V_1$ and of radius $r=|V_2-V_1|$:
+We were motivated by an intriguing construction for the [Right Strophoid Curve]([https://mathcurve.com/courbes2d.gb/strophoiddroite/strophoiddroite.shtml) [@odehnal2015-conics], on Robert Ferréol's wonderful [Mathcurve](https://mathcurve.com/index.htm) portal: such a curve is the locus of the Orthocenter $X_4$ of a triangle with two stationary vertices $V_1,V_2$ and a 3rd one $P(t)$ which is slid along the circle centered on $V_1$ and of radius $r=|V_2-V_1|$:
 
 ```{r,out.width="30%"}
 knitr::include_graphics("pics/single_vtx_strophoid.svg")
 ```
 
-Here we consider a slight generalization: let $V_1,V_2$ be stationary with respect to an *ellipse* $\mathcal{E}$ with axes $a$ and $b$. Let a third vertex $P(t)$ slide along the boundary of $\mathcal{E}$. We can now trace out the loci of triangle centers such as the Incenter $X_1$, Barycenter $X_2$, Circumcenter $X_3$, etc., for different *mountings* of $V_1,V_2$ on $\mathcal{E}$. The $X_k$ notation follows Clark Kimberling's Encyclopedia of Triangle Centers [@etc].
+In our app we consider a generalization: let $V_1,V_2$ be stationary with respect to an *ellipse* $\mathcal{E}$ with axes $a$ and $b$. Let a third vertex $P(t)$ slide along the boundary of $\mathcal{E}$. We can now trace out the loci of triangle centers such as the Incenter $X_1$, Barycenter $X_2$, Circumcenter $X_3$, etc., for different *mountings* of $V_1,V_2$ on $\mathcal{E}$. The $X_k$ notation follows Clark Kimberling's Encyclopedia of Triangle Centers [@etc].
 
 As an example, consider the locus (purple) of the Barycenter $X_2$ when $V_1,V_2$ are the right and top vertices of $\mathcal{E}$: 
 
