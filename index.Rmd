@@ -143,6 +143,7 @@ Loci over the selected triangle family $T$ can be calculated for the following o
 
 1. $X_n$: a triangle center of $T$ from $X_1--X_{1000}$
 1. $v_1$, $v_2$, $v_3$: one of the vertices of $T$.
+1. $env$: the envelope of segment $X_n X_m$, $m{\neq}n$.
 1. $e_{12}$, $e_{23}$, $e_{31}$: the envelope of a given side of $T$.
 1. The following Bicentric Pairs [@etc-bicentric]:
     + $\Omega_1,\Omega_2$: the Brocard points
@@ -157,10 +158,6 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 <div class = "row">
 <div class = "col-md-3">
 1. Reference
-1. *Cevian*
-1. *Anticevian*
-1. *Pedal*
-1. *Antipedal*
 1. Anticomplementary
 1. BCI
 1. 1st Brocard
@@ -170,14 +167,14 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 1. 5th Brocard
 1. 6th Brocard
 1. 7th Brocard [our invention!]
-</div>
-<div class = "col-md-3">
-15. Circum-Medial
+1. Circum-Medial
 1. Circum-Mid-arc
 1. Circum-Orthic
 1. Excentral
 1. Extouch
-1. Extangents
+</div>
+<div class = "col-md-3">
+16. Extangents
 1. Feuerbach
 1. Fuhrmann
 1. Half-Altitude
@@ -186,23 +183,21 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 1. Inner Vecten
 1. Intangents
 1. Intouch
-</div>
-<div class = "col-md-3">
-29. Johnson
+1. Johnson
 1. Lemoine
 1. Lucas Central
 1. Lucas Inner
 1. Lucas Tangents
 1. MacBeath
 1. Medial
-1. Mixtilinear
+</div>
+<div class = "col-md-3">
+32. Mixtilinear
 1. 1st Morley Adj
 1. 2nd Morley Adj
 1. 3rd Morley Adj
 1. 1st Neuberg
-</div>
-<div class = "col-md-3">
-41. 2nd Neuberg
+1. 2nd Neuberg
 1. Orthic
 1. Outer Vecten
 1. Reflection
@@ -215,7 +210,16 @@ To increase the drawing powers of our app, loci can be computed with respect to 
 </div>
 </div>
 
-Note that the cevian, anticevian, pedal, and antipedal triangles are parametrized by an additional triangle center $X_k$.
+# Cevian-Type Triangles
+
+One can also compute second-level cevian-like triangles with respect to a point $X_m$ of the reference or one of the above derived triangles. The available options are:
+
+1. Cevian
+1. Anticevian
+1. Circumcevian
+1. Pedal
+1. Antipedal
+1. Tripolar
 
 # Associated circles
 
