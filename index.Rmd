@@ -44,13 +44,14 @@ source("util.R")
 g_url <- "https://dan-reznik.github.io/ellipse-mounted-triangles"
 ```
 
-# `r colorize("(new!)","red")` Tutorials {-} 
+# Main Media Assets {-} 
 
-1. Web app: [here](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/)
+1. `r colorize("(start here!)","red")` A publication which doubles up as a [user manual](https://arxiv.org/abs/2106.04521)
 1. YouTube tutorial [playlist](https://www.youtube.com/playlist?list=PLTgIq68k2wHGBpTQgE3OmWMnK7BWTqfbU).
-1. Slides of Arsty loci: (https://docs.google.com/presentation/d/1pHPrM3wdiabtE1_gzp5ZUAzMZku1GB0-u0TNQBxEGhM/edit?usp=sharing)
+1. Gallery of Arsty [loci](https://docs.google.com/presentation/d/1pHPrM3wdiabtE1_gzp5ZUAzMZku1GB0-u0TNQBxEGhM/edit?usp=sharing) and as a  [video](https://youtu.be/l-O5UT8tpuw).
 <!-- [long](https://docs.google.com/presentation/d/1jAiNvLYjUxUNXQ_Pa_7poxFtGvMcTajVkReupUyUpt8/edit?usp=sharing) -->
 1. GitHub code [repository](https://github.com/dan-reznik/ellipse-mounted-loci-p5js)
+1. The live app itself: [here](https://dan-reznik.github.io/ellipse-mounted-loci-p5js/)
 
 # Introduction
 
