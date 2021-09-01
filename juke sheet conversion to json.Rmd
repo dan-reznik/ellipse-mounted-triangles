@@ -53,10 +53,12 @@ json_sheets <- jsonlite::toJSON(list_sheets,dataframe="columns",auto_unbox=T,pre
 
 
 ```{r}
-js_str <- str_glue("// github R project: 'ellipse-mounted-triangles'",
-         "//markdown file:     'juke sheet conversion to json.Rmd'",
-         "// google sheets id: '{gs_juke}'",
-         "const glob_juke = {json_sheets};",.sep="\\n")
+js_str <- str_glue(
+  "// github R project: 'ellipse-mounted-triangles'",
+  "// markdown file:    'juke sheet conversion to json.Rmd'",
+  "// google sheets id: '{gs_juke}'",
+  "const glob_juke = {json_sheets};",
+  .sep="\n")
 ```
 
 
