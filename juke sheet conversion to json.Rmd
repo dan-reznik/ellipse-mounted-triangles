@@ -1,0 +1,51 @@
+---
+title: "jukebox converter"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars}
+library(tidyverse)
+library(googlesheets4)
+library(jsonlite)
+```
+
+```{r index-auth, include = FALSE}
+gs_juke <- "1iSjH-dUliUoS9DWntZnn2S7dLzRYlD1z4TqdMRWWd5A"
+```
+
+```{r}
+gs4_deauth()
+```
+
+```{r}
+sheets <- sheet_names(gs_juke)
+sheets
+```
+
+```{r}
+sheets_filtered <- sheets %>% keep(~str_starts(.x,"\\d\\d "))
+sheets_filtered
+```
+
+```{r}
+list_sheets <- sheets_filtered %>%
+  map(~list(sheet=.x,data=read_sheet(gs_juke,sheet=.x)))
+```
+
+```{r}
+json_sheets <- jsonlite::toJSON(list_sheets,dataframe="columns",auto_unbox=T,pretty=T)
+```
+
+```{r}
+github <- "C:\\Users\\drezn\\Documents\\GitHub\\ellipse-mounted-loci-p5js\\"
+```
+
+
+```{r}
+str_c("const glob_juke = ",json_sheets,";") %>% write_file(str_c(github,"jukebox.js"))
+```
+
