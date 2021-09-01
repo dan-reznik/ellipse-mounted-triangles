@@ -7,6 +7,17 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+source: https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/
+
+```{r}
+#library(usethis)
+# github_token <- "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"
+# usethis::create_github_token()
+# library(gitcreds)
+# gitcreds_set()
+```
+
+
 ```{r cars}
 library(tidyverse)
 library(googlesheets4)
@@ -40,12 +51,17 @@ list_sheets <- sheets_filtered %>%
 json_sheets <- jsonlite::toJSON(list_sheets,dataframe="columns",auto_unbox=T,pretty=T)
 ```
 
+
 ```{r}
-github <- "C:\\Users\\drezn\\Documents\\GitHub\\ellipse-mounted-loci-p5js\\"
+js_str <- str_glue("// github R project: 'ellipse-mounted-triangles'",
+         "//markdown file:     'juke sheet conversion to json.Rmd'",
+         "// google sheets id: '{gs_juke}'",
+         "const glob_juke = {json_sheets};",.sep="\\n")
 ```
 
 
 ```{r}
-str_c("const glob_juke = ",json_sheets,";") %>% write_file(str_c(github,"jukebox.js"))
+github <- "C:\\Users\\drezn\\Documents\\GitHub\\ellipse-mounted-loci-p5js\\"
+js_str %>% write_file(str_c(github,"jukebox.js"))
 ```
 
